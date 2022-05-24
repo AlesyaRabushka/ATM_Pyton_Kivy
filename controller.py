@@ -83,7 +83,8 @@ class Controller:
     def money_out(self):
         give_money = GiveMoney()
         print(self.card.get_balance_byn())
-        give_money.money_out(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
+        flag = give_money.money_out(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
+        return flag
         self.last_operation = 'Выдача наличных'
         print(self.card.get_balance_byn())
 

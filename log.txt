@@ -2283,3 +2283,168 @@ Status: Success
 Operation type: Пополнение счета телефона
 Status: Success
 
+24-05-2022  10:57:03
+Operation type: Пополнение счета телефона
+Status: Success
+
+24-05-2022  11:00:12
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:09:46
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:11:38
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Лимит средств превышен
+
+24-05-2022  11:11:40
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Лимит средств превышен
+
+24-05-2022  11:11:41
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Лимит средств превышен
+
+24-05-2022  11:11:43
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:11:44
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:11:44
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:11:44
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:11:44
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:13:40
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Лимит средств превышен
+
+24-05-2022  11:14:07
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:14:10
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:14:12
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:14:12
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:14:12
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:14:13
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:14:55
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:14:58
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:14:58
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:14:59
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:14:59
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:14:59
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:17:39
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:17:41
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:18:03
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:18:06
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:20:45
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Неверный формат ввода
+
+24-05-2022  11:24:03
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Неверный формат ввода
+
+24-05-2022  11:24:08
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  11:25:08
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:25:59
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:26:45
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:28:09
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+24-05-2022  11:28:12
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Неверный формат ввода
+
+24-05-2022  11:28:18
+Operation type: Выдача наличных
+Status: Success
+

@@ -119,7 +119,19 @@ class MoneyOutScreen(MDScreen):
             self.ids.money_out_label.text = '[color=#FF9900]okeyy[/color]'
 
     def money_out(self):
-        self.controller.money_out()
+        flag = self.controller.money_out()
+        print(flag)
+        if flag == 4 :
+            self.ids.money_out_label.text = '[color=#FF9966]Лимит средств превышен[/color]'
+            return False
+        elif flag == 2:
+            self.ids.money_out_label.text = '[color=#FF9966]Недостаточно средств на счете[/color]'
+            return False
+        elif flag == 3:
+            self.ids.money_out_label.text = '[color=#FF9966]Неверный формат ввода[/color]'
+            return False
+        else:
+            return True
 
 
 
@@ -200,7 +212,10 @@ class PhoneInput(TextInput):
 
     def insert_text(self, string, from_undo = False):
         new_text = self.text + string
+        print(self.text)
         if new_text != '':
+
+
             if len(new_text) <= 17:
                 if len(new_text) == 4:
                     string += ' '
