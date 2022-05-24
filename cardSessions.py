@@ -195,24 +195,33 @@ class GiveMoney:
 class ChangePin(MyException):
     """смена пин-код"""
     @staticmethod
-    def change_card_pin(card, pin: int, single_t):
+    def change_card_pin(card, pin: int, single_t, gui, new_pin_gui):
         for i in range(3, 0, -1):
             try:
-                old_pin = int(input('Введите старый пин-код: '))
+                if gui == 0:
+                    old_pin = int(input('Введите старый пин-код: '))
+                else:
+                    old_pin = int(card.get_pin())
+
 
                 if pin == old_pin:
                     card.copy_data()
                     try:
-                        new_pin = int(input('Введите новый пин-код: '))
+                        if gui == 0:
+                            new_pin = int(input('Введите новый пин-код: '))
+                        else:
+                            new_pin = new_pin_gui
 
                         # проверка, что пин-код содержит не более 4х символов
                         if len(str(new_pin)) != 4:
+                            print('no')
                             raise MyException('Неверный ввод пин-код. Попробуйте ещё раз!')
 
 
                         else:
                             card.set_pin(new_pin)
                             single_t.log('Cмена пин-код', True,'')
+                            print('we did it')
 
                             # изменение средств на самой карточке
                             from_card = open('newcard.txt')
@@ -247,20 +256,34 @@ class ChangePin(MyException):
                                     to_card.write(from_card.readline())
                             from_card.close()
                             to_card.close()
+                            if gui == 1:
+                                return True
                             break
+
                     except:
-                        print('Неверный формат ввода. Осталось попыток: ' + str(i-1))
+                        if gui == 0:
+                            print('Неверный формат ввода. Осталось попыток: ' + str(i-1))
                         single_t.log('Смена пин-код', False, ' Неверный формат ввода')
+                        if gui == 1:
+                            return False
                 else:
                     if i - 1 == 0:
-                        print('Неверный пин-код. Попробуйте позже!')
+                        if gui == 0:
+                            print('Неверный пин-код. Попробуйте позже!')
+                        if gui == 1:
+                            return False
                         break
                     else:
-                        print('Попробуйте еще раз! Осталось попыток: ' + str(i-1))
+                        if gui == 0:
+                            print('Попробуйте еще раз! Осталось попыток: ' + str(i-1))
                         single_t.log('Смена пин-код', False,' Неверный пин-код')
+                        if gui == 1:
+                            return False
             except:
                 print('Неверный пин-код. Попробуйте ещё раз! Осталось попыток: ' + str(i-1))
                 single_t.log('Смена пин-код', False, ' Неверный пин-код')
+                if gui == 1:
+                    return False
 
 #деньги на бочку!
 class GetMoney:

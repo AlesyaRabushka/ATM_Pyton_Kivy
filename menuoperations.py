@@ -97,7 +97,7 @@ class MenuOperations(Bankomat):
 
             # смена пин-код
             elif operation_name == "change_pin":
-                ChangePin.change_card_pin(card, card.get_pin(), single_t)
+                ChangePin.change_card_pin(card, card.get_pin(), single_t, 0, '')
                 with typer.progressbar(range(100)) as progress:
                     for value in progress:
                         time.sleep(0.01)

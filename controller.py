@@ -74,38 +74,33 @@ class Controller:
         chosen = Chosen()
         if chosen.choose_card(number):
             self.card = Card(chosen.get_chosen())
-
             self.balance_screen.set_balance(self.get_card_balance_byn(), self.get_card_balance_usd())
-            # card = Card(chosen.get_chosen())
-            # card.get_balance_byn()
+
 
 
     def money_out(self):
         give_money = GiveMoney()
         print(self.card.get_balance_byn())
         flag = give_money.money_out(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
-        return flag
         self.last_operation = 'Выдача наличных'
-        print(self.card.get_balance_byn())
+        return flag
 
     def money_in(self):
-        print(self.card.get_balance_byn())
         get_money = GetMoney()
         get_money.money_in(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
         self.last_operation = 'Пополнение средств'
-        print(self.card.get_balance_byn())
+
 
 
     def telephone_payment(self,number, money):
-
-        print(self.card.get_balance_byn())
         telephone = Telephone()
         #if self.check_phone_number():
            # telephone.telephone_pay(self.card, int(money), self.phone_number, self.storage, self.single_t)
             # self.last_operation = 'Пополнение средств телефона'
         #if self.check_phone_number():
         telephone.telephone_pay(self.card, int(money), number, self.storage, self.single_t)
-        print(self.card.get_balance_byn())
+        self.last_operation = 'Пополнение средств телефона'
+
 
     def fromBUNtoUSD(self,money):
         print(self.card.get_balance_byn())
@@ -119,20 +114,7 @@ class Controller:
         transaction.fromUSDtoBUN(self.card,float(money), 1)
         print(self.card.get_balance_byn())
 
-    def change_pin(self):
-        pass
-
-
-
-
-
-
-
-    # def set_screen(self, name):
-    #     if name == 'card operations':
-    #         self.current_screen = self.money_operations
-    #         self.get_screen()
-
-
-    def get_screen(self):
-        return self.current_screen
+    def change_pin(self, new_pin):
+        flag = ChangePin.change_card_pin(self.card, self.card.get_pin(), self.single_t, 1, new_pin)
+        print(flag)
+        return flag

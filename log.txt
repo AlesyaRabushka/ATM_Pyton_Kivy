@@ -2448,3 +2448,58 @@ Error type:  Неверный формат ввода
 Operation type: Выдача наличных
 Status: Success
 
+24-05-2022  11:33:53
+Operation type: Выдача наличных
+Status: Success
+
+24-05-2022  12:58:09
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+24-05-2022  12:58:09
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+24-05-2022  13:04:13
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+24-05-2022  13:04:13
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+24-05-2022  13:04:14
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+24-05-2022  13:04:14
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+24-05-2022  13:14:56
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+24-05-2022  13:18:25
+Operation type: Cмена пин-код
+Status: Success
+
+24-05-2022  13:21:23
+Operation type: Cмена пин-код
+Status: Success
+
+24-05-2022  13:23:02
+Operation type: Cмена пин-код
+Status: Success
+
+24-05-2022  13:24:27
+Operation type: Cмена пин-код
+Status: Success
+

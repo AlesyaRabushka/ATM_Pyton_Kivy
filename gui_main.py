@@ -24,14 +24,14 @@ class MyApp(MDApp):
 
         death_screen_value = random.randint(0,10)
         self.controller.death_screen_value = 1
-
+        pin_screen = PinScreen(name='pin_screen', controller=self.controller)
         self.sm = Manager(transition=NoTransition())
         bs = BalanceScreen(name='balance_screen', controller=self.controller)
         self.controller.balance_screen = bs
         self.sm.add_widget(WelcomeScreen(name='welcome_screen', controller = self.controller, balance=bs))
         self.sm.add_widget(bs)
-        self.sm.add_widget(PinScreen(name='pin_screen', controller=self.controller))
-        self.sm.add_widget(MenuScreen(name='menu_screen'))
+        self.sm.add_widget(pin_screen)
+        self.sm.add_widget(MenuScreen(name='menu_screen', pin_screen=pin_screen))
         self.sm.add_widget(MoneyOutChoiceScreen(name = 'money_out_choice_screen', controller=self.controller))
         self.sm.add_widget(MoneyOutScreen(name='money_out_screen', controller=self.controller))
         self.sm.add_widget(MoneyOperations(name='operations_screen'))
@@ -47,6 +47,7 @@ class MyApp(MDApp):
         self.sm.add_widget(TelephonePaymentScreen(name='telephone_payment', controller=self.controller))
         self.sm.add_widget(BYNtoUSD(name='byn_to_usd', controller=self.controller))
         self.sm.add_widget(USDtoBYN(name='usd_to_byn', controller=self.controller))
+        self.sm.add_widget(ChangePinScreen(name='change_pin_screen', controller=self.controller))
         self.sm.current = 'welcome_screen'
 
 

@@ -56,6 +56,8 @@ class PinScreen(MDScreen):
         self.controller = controller
         self.pin_count = 0
 
+        self.change_pin = False
+
         self.not_correct = False
 
 
@@ -81,14 +83,23 @@ class PinScreen(MDScreen):
             return 2
 
 
+    def set_change_pin(self):
+        self.change_pin = True
 
+    def change_screen(self, screen_name):
+        if not self.change_pin:
+            self.manager.change_screen(screen_name)
+        else:
+            self.manager.change_screen('change_pin_screen')
 
     def clean_input(self):
         self.ids.pin_input.text = ''
 
 
 class MenuScreen(MDScreen):
-    pass
+    def __init__(self, pin_screen, **kwargs):
+        super().__init__(**kwargs)
+        self.pin_screen = pin_screen
 
 class MoneyOutChoiceScreen(MDScreen):
     def __init__(self, controller, **kwargs):
@@ -153,6 +164,24 @@ class MoneyInScreen(MDScreen):
 class MoneyOperations(MDScreen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+
+class ChangePinScreen(MDScreen):
+    def __init__(self, controller, **kwargs):
+        super().__init__(**kwargs)
+        self.controller = controller
+        self.new_pin = ''
+
+    def set_pin(self, new_pin):
+        self.new_pin = new_pin
+
+    def change_pin(self):
+        flag =  self.controller.change_pin(self.new_pin)
+        if flag == True:
+            self.controller.set_last_operation('Смена пин-код')
+            return flag
+        else:
+            return flag
 
 
 

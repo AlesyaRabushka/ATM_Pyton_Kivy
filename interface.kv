@@ -48,8 +48,10 @@
 
         Button:
             text: 'ВВОД'
-            on_press: if root.check_pin() == 1: app.root.change_screen('menu_screen')
-            on_release: if root.not_correct == True: app.root.change_screen('warning_screen')
+            on_press: if root.check_pin() == 1: root.change_screen('menu_screen')
+            on_release: if root.not_correct == True: root.change_screen('warning_screen')
+#            on_press: if root.check_pin() == 1: app.root.change_screen('menu_screen')
+#            on_release: if root.not_correct == True: app.root.change_screen('warning_screen')
 
 
 
@@ -70,7 +72,10 @@
         Button:
             text: 'money in'
             on_press: app.root.change_screen('money_in_screen')
-
+        Button:
+            text: 'change pin'
+            on_press: app.root.change_screen('pin_screen')
+            on_release: root.pin_screen.set_change_pin()
         Button:
             text: 'telephone payment'
             on_press: app.root.change_screen('telephone_payment')
@@ -275,6 +280,30 @@
         Button:
             text:'continue'
             on_press: app.root.change_screen('continue_screen')
+
+
+<ChangePinScreen>
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            id: change_pin_label
+            text: '[color=#FF9966]Введите новый пин-код[/color]'
+            markup: True
+
+        PinInput:
+            id: pin_input
+            halign: 'center'
+            hint_text: 'ПИН-КОД'
+            on_text: root.set_pin(self.text)
+            input_filter: 'int'
+
+        Button:
+            text: 'ВВОД'
+            on_press: if root.change_pin() == True: app.root.change_screen('check_choice_screen')
+            #on_release: if root.not_correct == True: root.change_screen('warning_screen')
+
+
 
 
 <ContinueScreen>
