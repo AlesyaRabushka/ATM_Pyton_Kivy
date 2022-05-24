@@ -1,30 +1,65 @@
 
 <WelcomeScreen>
+    background_color:(1,0,1)
+    background_normal:''
     BoxLayout:
         orientation: "vertical"
         adaptive_size: True
+#        Label:
+#            id: label
+#            text: '[color=#FF9977]Выберите карточку[/color]'
+#            markup: True
+#            font_size: 20
+#            size_hint: None, None
+#            height:250
+#            width:250
+#            pos_hint: {"center_x": .5}
+
+    GridLayout:
+        cols: 1
+        rows:4
+        padding: 250, 30, 250, 50
+        spacing: 20
+
         Label:
             id: label
-            text: '[color=#FF9977]Выберите карточку[/color]'
+            text: '[color=#3E769B]                   Для начала работы \n                   выберите карточку[/color]'
             markup: True
+            font_size: 30
+            size_hint: None, None
+            height:170
+            width:170
+            pos_hint: {"center_x": .5}
 
         Button:
             text: 'Alesya Rabushka'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint: 1, 0.3
+            pos_hint: {"center_x": .5,"center_y":.5}
             on_press: root.choose_card(1)
-            on_release: app.root.change_screen('pin_screen')
+            on_release: app.root.change_screen('death_screen') if root.death_screen_value % 2 == 0 else app.root.change_screen('pin_screen')
 
 
         Button:
             text: 'Alena Sklema'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint: 1, 0.3
+            pos_hint: {"center_x": .5,"center_y":.5}
             on_press: root.choose_card(2)
             on_release: app.root.change_screen('pin_screen')
-            on_release: app.root.change_screen('pin_screen')
+            on_release: app.root.change_screen('death_screen') if root.death_screen_value % 2 == 0 else app.root.change_screen('pin_screen')
 
         Button:
             text: 'Aleksey Smelov'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint: 1, 0.3
+            pos_hint: {"center_x": .5,"center_y":.5}
             on_press: root.choose_card(3)
             on_release: app.root.change_screen('pin_screen')
-            on_release: app.root.change_screen('pin_screen')
+            on_release: app.root.change_screen('death_screen') if root.death_screen_value % 2 == 0 else app.root.change_screen('pin_screen')
 
 
 
@@ -33,25 +68,42 @@
     BoxLayout:
         orientation: "vertical"
         adaptive_size: True
+        canvas.before:
+            Color:
+                rgb: (1,1,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    GridLayout:
+        cols:1
+        rows:3
+        padding:300,200,300,200
+        spacing:30
 
         Label:
             id: pin_label
-            text: '[color=#FF9966]Введите пин-код[/color]'
+            font_size: 20
+            text: '[color=#3E769B]Введите пин-код[/color]'
             markup: True
 
         PinInput:
             id: pin_input
-            halign: 'center'
             hint_text: 'ПИН-КОД'
+            size_hint:None,None
+            size:(200,30)
             on_text: root.set_pin(self.text)
             input_filter: 'int'
+#            pos_hint: {"center_x": .6}
 
         Button:
             text: 'ВВОД'
-            on_press: if root.check_pin() == 1: root.change_screen('menu_screen')
-            on_release: if root.not_correct == True: root.change_screen('warning_screen')
-#            on_press: if root.check_pin() == 1: app.root.change_screen('menu_screen')
-#            on_release: if root.not_correct == True: app.root.change_screen('warning_screen')
+            size_hint:None,None
+            size:(200,50)
+            background_color:'#74B0D8'
+            background_normal:''
+            on_press: if root.check_pin() == 1: app.root.change_screen('menu_screen')
+            on_release: if root.not_correct == True: app.root.change_screen('warning_screen')
 
 
 
@@ -60,34 +112,66 @@
     BoxLayout:
         orientation: "vertical"
         adaptive_size: True
+    GridLayout:
+        cols:1
+        padding:300,50,300,500
 
-
+        Label:
+            id: pin_label
+            font_size: 20
+            background_color:'#74B0D8'
+            background_normal:''
+            text: '[color=#3E769B]Выберите операцию[/color]'
+            markup: True
+    GridLayout:
+        cols:2
+        rows:3
+        padding:90,150,250,100
+        spacing:30
         Button:
-            text: 'balance'
+            text: 'Информация о \n      балансе'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(300,100)
             on_press: app.root.change_screen('balance_screen')
 
         Button:
-            text: 'money out'
+            text: 'Снять наличные'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(300,100)
             on_press: app.root.change_screen('money_out_choice_screen')
         Button:
-            text: 'money in'
+            text: 'Пополнить баланс'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(300,100)
             on_press: app.root.change_screen('money_in_screen')
+
         Button:
-            text: 'change pin'
-            on_press: app.root.change_screen('pin_screen')
-            on_release: root.pin_screen.set_change_pin()
-        Button:
-            text: 'telephone payment'
+            text: 'Оплатить мобильную \n              связь'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(300,100)
             on_press: app.root.change_screen('telephone_payment')
         Button:
-            text: 'transaction to USD'
+            text: 'Транзакция в $'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(300,100)
             on_press: app.root.change_screen('byn_to_usd')
         Button:
-            text: 'transaction to BYN'
+            text: 'Транзакция в BYN'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(300,100)
             on_press: app.root.change_screen('usd_to_byn')
-        Button:
-            text: 'Завершить сеанс'
-            on_press: app.root.change_screen('exit_screen')
 
 <MoneyOutChoiceScreen>
     BoxLayout:
@@ -131,10 +215,6 @@
             text: 'Другая сумма'
             on_press: app.root.change_screen('money_out_screen')
 
-        Button:
-            text: 'Отмена'
-            on_press: app.root.change_screen('menu_screen')
-
 
 <BalanceScreen>
     BoxLayout:
@@ -153,10 +233,6 @@
             text:'продолжить'
             on_press: app.root.change_screen('menu_screen')
 
-        Button:
-            text: 'Отмена'
-            on_press: app.root.change_screen('menu_screen')
-
 
 <MoneyOutScreen>
     BoxLayout:
@@ -166,22 +242,16 @@
         Label:
             id: money_out_label
             text: '[color=#FF9966]Введите сумму выдачи[/color]'
-            markup: True
 
         TextInput:
-            halign: 'center'
             hint_text: 'money'
             on_text: root.set_money(self.text)
             input_filter: 'int'
 
         Button:
             text: 'продолжить'
-            #on_press: root.money_out()
-            on_release: if root.money_out() == True and root.death == False: app.root.change_screen('check_choice_screen')
-
-        Button:
-            text: 'Отмена'
-            on_press: app.root.change_screen('menu_screen')
+            on_press: root.money_out()
+            on_release: app.root.change_screen('check_choice_screen')
 
 
 
@@ -195,7 +265,6 @@
             markup: True
 
         TextInput:
-            halign: 'center'
             hint_text: 'money'
             on_text: root.set_money(self.text)
             input_filter: 'int'
@@ -203,13 +272,7 @@
         Button:
             text: 'оппа сюда нада'
             on_press: root.money_in()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
-
-        Button:
-            text: 'Отмена'
-            on_press: app.root.change_screen('menu_screen')
-
-
+            on_release: app.root.change_screen('check_choice_screen')
 
 <TelephonePaymentScreen>
     number:number
@@ -222,27 +285,20 @@
             text: '[color=#FF9966]Введите номер и сумму[/color]'
 
         PhoneInput:
-            halign: 'center'
             id: number
             multiline:False
-            input_filter: 'int'
             text: '+375 '
-
 
         TextInput:
             id: money
-            halign: 'center'
             hint_text: 'сумма деняк'
             multiline:False
-#            input_filter: 'int'
+            input_filter: int
 
         Button:
             text: 'Продолжить'
             on_press: root.phone_payment()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
-        Button:
-            text: 'Отмена'
-            on_press: app.root.change_screen('menu_screen')
+            on_release: app.root.change_screen('check_screen')
 
 
 <BYNtoUSD>
@@ -251,36 +307,24 @@
         orientation: 'vertical'
         TextInput:
             id: money
-            halign: 'center'
             multiline:False
-            input_filter: 'int'
+            input_filter: int
         Button:
             text: 'Продолжить'
             on_press: root.from_byn_to_usd()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
-
-        Button:
-            text: 'Отмена'
-            on_press: app.root.change_screen('menu_screen')
-
-
+            on_release: app.root.change_screen('check_screen')
 <USDtoBYN>
     money:money
     BoxLayout:
         orientation: 'vertical'
         TextInput:
             id: money
-            halign: 'center'
             multiline:False
-            input_filter: 'int'
+            input_filter: int
         Button:
             text: 'Продолжить'
             on_press: root.from_usd_to_byn()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
-
-        Button:
-            text: 'Отмена'
-            on_press: app.root.change_screen('menu_screen')
+            on_release: app.root.change_screen('check_screen')
 
 
 <CheckChoiceScreen>
@@ -312,34 +356,6 @@
         Button:
             text:'continue'
             on_press: app.root.change_screen('continue_screen')
-
-
-<ChangePinScreen>
-    BoxLayout:
-        orientation: 'vertical'
-
-        Label:
-            id: change_pin_label
-            text: '[color=#FF9966]Введите новый пин-код[/color]'
-            markup: True
-
-        PinInput:
-            id: pin_input
-            halign: 'center'
-            hint_text: 'ПИН-КОД'
-            on_text: root.set_pin(self.text)
-            input_filter: 'int'
-
-        Button:
-            text: 'ВВОД'
-            on_press: if root.change_pin() == True: app.root.change_screen('check_choice_screen')
-            on_release: if root.death == True: app.root.change_screen('death_screen')
-
-        Button:
-            text: 'Отмена'
-            on_press: app.root.change_screen('menu_screen')
-
-
 
 
 <ContinueScreen>
