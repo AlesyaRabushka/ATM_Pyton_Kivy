@@ -95,7 +95,7 @@ class Controller:
         print(self.card.get_balance_byn())
 
 
-    def telephone_payment(self,number,money):
+    def telephone_payment(self,number, money):
 
         print(self.card.get_balance_byn())
         telephone = Telephone()

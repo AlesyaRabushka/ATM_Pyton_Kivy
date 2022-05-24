@@ -196,11 +196,12 @@
             multiline:False
             text: '+375 '
 
+
         TextInput:
             id: money
             hint_text: 'сумма деняк'
             multiline:False
-            input_filter: int
+            input_filter: 'int'
 
         Button:
             text: 'Продолжить'
@@ -215,7 +216,7 @@
         TextInput:
             id: money
             multiline:False
-            input_filter: int
+            input_filter: 'int'
         Button:
             text: 'Продолжить'
             on_press: root.from_byn_to_usd()
@@ -227,7 +228,7 @@
         TextInput:
             id: money
             multiline:False
-            input_filter: int
+            input_filter: 'int'
         Button:
             text: 'Продолжить'
             on_press: root.from_usd_to_byn()
