@@ -68,7 +68,8 @@ class PinScreen(MDScreen):
         self.controller.change_pin()
 
     def check_pin(self):
-        if self.controller.check_pin():
+        flag = self.controller.check_pin()
+        if flag == True:
             self.ids.pin_label.text = '[color=#FF88FF]pin is correct[/color]'
             self.clean_input()
             return 1
@@ -106,6 +107,8 @@ class MoneyOutChoiceScreen(MDScreen):
         super().__init__(**kwargs)
         self.controller = controller
 
+
+
     def set_money(self, money):
         if self.controller.set_money(money) == False:
             self.ids.money_out_label.text = '[color=#FF9900]the money input is not what i wanted[/color]'
@@ -117,10 +120,12 @@ class MoneyOutChoiceScreen(MDScreen):
         self.controller.money_out()
 
 
+
 class MoneyOutScreen(MDScreen):
     def __init__(self, controller, **kwargs):
         super().__init__(**kwargs)
         self.controller = controller
+        self.death = False
 
 
     def set_money(self, money):
@@ -141,6 +146,8 @@ class MoneyOutScreen(MDScreen):
         elif flag == 3:
             self.ids.money_out_label.text = '[color=#FF9966]Неверный формат ввода[/color]'
             return False
+        elif flag == 5:
+            self.death = True
         else:
             return True
 
@@ -150,15 +157,22 @@ class MoneyInScreen(MDScreen):
     def __init__(self, controller, **kwargs):
         super().__init__(**kwargs)
         self.controller = controller
+        self.death = False
+
 
     def set_money(self, money):
-        if self.controller.set_money(money) == False:
+        flag = self.controller.set_money(money)
+        if flag == False:
             self.ids.money_in_label.text = '[color=#FF9900]the money input is not what i wanted[/color]'
+        elif flag == 5:
+            self.death = True
         else:
             self.ids.money_in_label.text = '[color=#FF9900]okeyy[/color]'
 
     def money_in(self):
-        self.controller.money_in()
+        flag = self.controller.money_in()
+        if flag == 5:
+            self.death = True
 
 
 class MoneyOperations(MDScreen):
@@ -171,6 +185,7 @@ class ChangePinScreen(MDScreen):
         super().__init__(**kwargs)
         self.controller = controller
         self.new_pin = ''
+        self.death = False
 
     def set_pin(self, new_pin):
         self.new_pin = new_pin
@@ -180,6 +195,8 @@ class ChangePinScreen(MDScreen):
         if flag == True:
             self.controller.set_last_operation('Смена пин-код')
             return flag
+        elif flag == 5:
+            self.death = True
         else:
             return flag
 
@@ -268,13 +285,17 @@ class TelephonePaymentScreen(MDScreen):
     def __init__(self, controller, **kwargs):
         super().__init__(**kwargs)
         self.controller = controller
+        self.death = False
 
 
     def phone_payment(self):
         number = self.ids.number.text
         money = self.ids.money.text
+        flag = self.controller.telephone_payment(number, money)
+        if flag == 5:
+            self.death = True
 
-        self.controller.telephone_payment(number, money)
+
 
 class PinInput(TextInput):
     def __init__(self, **kwargs):
@@ -313,19 +334,27 @@ class BYNtoUSD(MDScreen):
     def __init__(self,controller, **kw):
         super().__init__(**kw)
         self.controller = controller
+        self.death = False
 
     def from_byn_to_usd(self):
         money=self.money.text
-        self.controller.fromBUNtoUSD(money)
+        flag = self.controller.fromBUNtoUSD(money)
+        if flag == 5:
+            self.death = True
 
 class USDtoBYN(MDScreen):
     money = ObjectProperty()
     def __init__(self,controller, **kw):
         super().__init__(**kw)
         self.controller = controller
+        self.death = False
+
+
     def from_usd_to_byn(self):
         money = self.money.text
-        self.controller.fromUSDtoBUN(money)
+        flag = self.controller.fromUSDtoBUN(money)
+        if flag == 5:
+            self.death = True
 
 
 

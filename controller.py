@@ -15,10 +15,9 @@ from bankomat import Bankomat
 
 
 class Controller:
-    def __init__(self):
-        # self.main_screen = WelcomeScreen(controller=self)
-        # self.money_operations = MoneyOperations()
-        # self.current_screen = self.main_screen
+    def __init__(self, screen_manager):
+        self.screen_manager = screen_manager
+        
         self.balance_screen = ''
         self.death_screen_value = 0
 
@@ -50,8 +49,12 @@ class Controller:
         return str(self.card.get_balance_usd())
 
     def check_pin(self):
-        if int(self.pin) == int(self.card.get_pin()):
-            return True
+        try:
+            if int(self.pin) == int(self.card.get_pin()):
+                return True
+        except:
+            self.screen_manager.change_screen('death_screen')
+
 
     def check_phone_number(self):
         plus = 0
@@ -70,6 +73,7 @@ class Controller:
         elif full_number[0] == '3' and full_number[1] == '7' and full_number[2] == '5':
             return True
 
+
     def choose_card(self, number):
         chosen = Chosen()
         if chosen.choose_card(number):
@@ -79,42 +83,66 @@ class Controller:
 
 
     def money_out(self):
-        give_money = GiveMoney()
-        print(self.card.get_balance_byn())
-        flag = give_money.money_out(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
-        self.last_operation = 'Выдача наличных'
-        return flag
+        try:
+            give_money = GiveMoney()
+            print(self.card.get_balance_byn())
+            flag = give_money.money_out(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
+            self.last_operation = 'Выдача наличных'
+            return flag
+        except:
+            self.screen_manager.change_screen('death_screen')
+            return 5
 
     def money_in(self):
-        get_money = GetMoney()
-        get_money.money_in(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
-        self.last_operation = 'Пополнение средств'
+        try:
+            get_money = GetMoney()
+            get_money.money_in(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
+            self.last_operation = 'Пополнение средств'
+        except:
+            self.screen_manager.change_screen('death_screen')
+            return 5
 
 
 
     def telephone_payment(self,number, money):
-        telephone = Telephone()
-        #if self.check_phone_number():
-           # telephone.telephone_pay(self.card, int(money), self.phone_number, self.storage, self.single_t)
-            # self.last_operation = 'Пополнение средств телефона'
-        #if self.check_phone_number():
-        telephone.telephone_pay(self.card, int(money), number, self.storage, self.single_t)
-        self.last_operation = 'Пополнение средств телефона'
+        try:
+            telephone = Telephone()
+            telephone.telephone_pay(self.card, int(money), number, self.storage, self.single_t)
+            self.last_operation = 'Пополнение средств телефона'
+        except:
+            self.screen_manager.change_screen('death_screen')
+            return 5
 
 
     def fromBUNtoUSD(self,money):
-        print(self.card.get_balance_byn())
-        transaction = Currency_transactions()
-        transaction.fromBUNtoUSD(self.card,float(money), 1)
-        print(self.card.get_balance_byn())
+        try:
+            print(self.card.get_balance_byn())
+            transaction = Currency_transactions()
+            transaction.fromBUNtoUSD(self.card,float(money), 1)
+            self.last_operation = 'Перевод средств\n                  BYN->USD'
+            print(self.card.get_balance_byn())
+        except:
+            self.screen_manager.change_screen('death_screen')
+            return 5
+
 
     def fromUSDtoBUN(self,money):
-        print(self.card.get_balance_byn())
-        transaction = Currency_transactions()
-        transaction.fromUSDtoBUN(self.card,float(money), 1)
-        print(self.card.get_balance_byn())
+        try:
+            print(self.card.get_balance_byn())
+            transaction = Currency_transactions()
+            transaction.fromUSDtoBUN(self.card,float(money), 1)
+            self.last_operation = 'Перевод средств\n                  USD->BYN'
+            print(self.card.get_balance_byn())
+        except:
+            self.screen_manager.change_screen('death_screen')
+            return 5
+
 
     def change_pin(self, new_pin):
-        flag = ChangePin.change_card_pin(self.card, self.card.get_pin(), self.single_t, 1, new_pin)
-        print(flag)
-        return flag
+        try:
+            flag = ChangePin.change_card_pin(self.card, self.card.get_pin(), self.single_t, 1, new_pin)
+            print(flag)
+            return flag
+        except:
+            self.screen_manager.change_screen('death_screen')
+            return 5

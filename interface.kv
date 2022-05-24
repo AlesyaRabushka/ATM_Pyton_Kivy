@@ -11,20 +11,20 @@
         Button:
             text: 'Alesya Rabushka'
             on_press: root.choose_card(1)
-            on_release: app.root.change_screen('death_screen') if root.death_screen_value % 2 == 0 else app.root.change_screen('pin_screen')
+            on_release: app.root.change_screen('pin_screen')
 
 
         Button:
             text: 'Alena Sklema'
             on_press: root.choose_card(2)
             on_release: app.root.change_screen('pin_screen')
-            on_release: app.root.change_screen('death_screen') if root.death_screen_value % 2 == 0 else app.root.change_screen('pin_screen')
+            on_release: app.root.change_screen('pin_screen')
 
         Button:
             text: 'Aleksey Smelov'
             on_press: root.choose_card(3)
             on_release: app.root.change_screen('pin_screen')
-            on_release: app.root.change_screen('death_screen') if root.death_screen_value % 2 == 0 else app.root.change_screen('pin_screen')
+            on_release: app.root.change_screen('pin_screen')
 
 
 
@@ -85,6 +85,9 @@
         Button:
             text: 'transaction to BYN'
             on_press: app.root.change_screen('usd_to_byn')
+        Button:
+            text: 'Завершить сеанс'
+            on_press: app.root.change_screen('exit_screen')
 
 <MoneyOutChoiceScreen>
     BoxLayout:
@@ -128,6 +131,10 @@
             text: 'Другая сумма'
             on_press: app.root.change_screen('money_out_screen')
 
+        Button:
+            text: 'Отмена'
+            on_press: app.root.change_screen('menu_screen')
+
 
 <BalanceScreen>
     BoxLayout:
@@ -144,6 +151,10 @@
 
         Button:
             text:'продолжить'
+            on_press: app.root.change_screen('menu_screen')
+
+        Button:
+            text: 'Отмена'
             on_press: app.root.change_screen('menu_screen')
 
 
@@ -166,7 +177,11 @@
         Button:
             text: 'продолжить'
             #on_press: root.money_out()
-            on_release: if root.money_out() == True: app.root.change_screen('check_choice_screen')
+            on_release: if root.money_out() == True and root.death == False: app.root.change_screen('check_choice_screen')
+
+        Button:
+            text: 'Отмена'
+            on_press: app.root.change_screen('menu_screen')
 
 
 
@@ -188,7 +203,13 @@
         Button:
             text: 'оппа сюда нада'
             on_press: root.money_in()
-            on_release: app.root.change_screen('check_choice_screen')
+            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+
+        Button:
+            text: 'Отмена'
+            on_press: app.root.change_screen('menu_screen')
+
+
 
 <TelephonePaymentScreen>
     number:number
@@ -218,7 +239,10 @@
         Button:
             text: 'Продолжить'
             on_press: root.phone_payment()
-            on_release: app.root.change_screen('check_screen')
+            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+        Button:
+            text: 'Отмена'
+            on_press: app.root.change_screen('menu_screen')
 
 
 <BYNtoUSD>
@@ -233,7 +257,11 @@
         Button:
             text: 'Продолжить'
             on_press: root.from_byn_to_usd()
-            on_release: app.root.change_screen('check_screen')
+            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+
+        Button:
+            text: 'Отмена'
+            on_press: app.root.change_screen('menu_screen')
 
 
 <USDtoBYN>
@@ -248,7 +276,11 @@
         Button:
             text: 'Продолжить'
             on_press: root.from_usd_to_byn()
-            on_release: app.root.change_screen('check_screen')
+            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+
+        Button:
+            text: 'Отмена'
+            on_press: app.root.change_screen('menu_screen')
 
 
 <CheckChoiceScreen>
@@ -301,7 +333,11 @@
         Button:
             text: 'ВВОД'
             on_press: if root.change_pin() == True: app.root.change_screen('check_choice_screen')
-            #on_release: if root.not_correct == True: root.change_screen('warning_screen')
+            on_release: if root.death == True: app.root.change_screen('death_screen')
+
+        Button:
+            text: 'Отмена'
+            on_press: app.root.change_screen('menu_screen')
 
 
 

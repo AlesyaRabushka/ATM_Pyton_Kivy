@@ -20,12 +20,11 @@ class Manager(ScreenManager):
 class MyApp(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.controller = Controller()
-
-        death_screen_value = random.randint(0,10)
-        self.controller.death_screen_value = 1
-        pin_screen = PinScreen(name='pin_screen', controller=self.controller)
         self.sm = Manager(transition=NoTransition())
+        self.controller = Controller(screen_manager = self.sm)
+
+        pin_screen = PinScreen(name='pin_screen', controller=self.controller)
+
         bs = BalanceScreen(name='balance_screen', controller=self.controller)
         self.controller.balance_screen = bs
         self.sm.add_widget(WelcomeScreen(name='welcome_screen', controller = self.controller, balance=bs))

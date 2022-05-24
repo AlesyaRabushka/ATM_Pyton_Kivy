@@ -2503,3 +2503,26 @@ Status: Success
 Operation type: Cмена пин-код
 Status: Success
 
+24-05-2022  18:40:21
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+24-05-2022  18:40:28
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+24-05-2022  18:41:41
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+24-05-2022  18:41:47
+Operation type: Cмена пин-код
+Status: Success
+
+24-05-2022  18:42:05
+Operation type: Cмена пин-код
+Status: Success
+
