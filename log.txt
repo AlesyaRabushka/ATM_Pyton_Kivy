@@ -2881,3 +2881,23 @@ Status: Success
 Operation type: Выдача наличных
 Status: Success
 
+25-05-2022  16:35:02
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:35:58
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:36:23
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:36:43
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:36:59
+Operation type: Выдача наличных
+Status: Success
+

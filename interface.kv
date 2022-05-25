@@ -464,6 +464,7 @@
             halign: 'center'
             id: number
             multiline:False
+            pos_hint:{'center_y':.5}
             size_hint:None,None
             size:(250,60)
 #            input_filter: 'int'
@@ -508,55 +509,126 @@
     money:money
     BoxLayout:
         orientation: 'vertical'
+
+    GridLayout:
+        cols:1
+        padding:270,140,400,600
+        spacing:110
+        Label:
+            id: money_out_label
+            text: '[color=#3E769B]Введите сумму перевода[/color]'
+            markup: True
+            font_size: 25
         TextInput:
             id: money
             halign: 'center'
+            size_hint:None,None
+            size:(250,60)
             multiline:False
             input_filter: 'int'
-        Button:
-            text: 'Продолжить'
-            on_press: root.from_byn_to_usd()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+    GridLayout:
+        cols:2
+        rows:1
+        padding:190,400,200,50
+        spacing:30
 
         Button:
             text: 'Отмена'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('menu_screen')
+        Button:
+            text: 'Продолжить'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
+            on_press: root.from_byn_to_usd()
+            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+
 
 
 <USDtoBYN>
     money:money
     BoxLayout:
         orientation: 'vertical'
+    GridLayout:
+        cols:1
+        padding:270,140,400,600
+        spacing:110
+        Label:
+            id: money_out_label
+            text: '[color=#3E769B]Введите сумму перевода[/color]'
+            markup: True
+            font_size: 25
         TextInput:
             id: money
             halign: 'center'
+            hint_text: 'money'
+            size_hint:None,None
+            size:(250,60)
             multiline:False
             input_filter: 'int'
-        Button:
-            text: 'Продолжить'
-            on_press: root.from_usd_to_byn()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+    GridLayout:
+        cols:2
+        rows:1
+        padding:190,400,200,50
+        spacing:30
 
         Button:
             text: 'Отмена'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('menu_screen')
+
+        Button:
+            text: 'Продолжить'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
+            on_press: root.from_usd_to_byn()
+            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+
 
 
 <CheckChoiceScreen>
     BoxLayout:
         orientation:'vertical'
-
+    GridLayout:
+        cols:1
+        padding:400,200,400,450
+        spacing:30
         Label:
-            text: '[color=#FF9966]Хатишь свой чекъ?[/color]'
+            text: '[color=#3E769B]Печать чека?[/color]'
             markup: True
+            font_size: 25
+    GridLayout:
+        cols:2
+        rows:1
+        padding:190,300,200,200
+        spacing:30
+
+
         Button:
-            text: 'хатишь'
+            text:'Нет'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
+            on_press: app.root.change_screen('continue_screen')
+        Button:
+            text: 'Да'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('check_screen')
             on_release: root.check()
-
-        Button:
-            text:'не хатишь'
-            on_press: app.root.change_screen('continue_screen')
 
 
 
