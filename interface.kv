@@ -352,27 +352,47 @@
     BoxLayout:
         orientation: 'vertical'
         adaptive_size: True
-
+    GridLayout:
+        cols:1
+        padding:270,140,400,600
+        spacing:110
         Label:
             id: money_out_label
-            text: '[color=#FF9966]Введите сумму выдачи[/color]'
+            text: '[color=#3E769B]Введите сумму выдачи[/color]'
             markup: True
+            font_size: 25
 
         TextInput:
-            id: money_out_textinput
+            id: money_out_input
             halign: 'center'
             hint_text: 'money'
+            size_hint:None,None
+            size:(250,60)
             on_text: root.set_money(self.text)
             input_filter: 'int'
-
-        Button:
-            text: 'продолжить'
-            #on_press: root.money_out()
-            on_release: if root.money_out() == True and root.death == False and root.correct == True: app.root.change_screen('check_choice_screen')
+    GridLayout:
+        cols:2
+        rows:1
+        padding:190,400,200,50
+        spacing:30
 
         Button:
             text: 'Отмена'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('menu_screen')
+
+        Button:
+            text: 'Продолжить'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
+            #on_press: root.money_out()
+            on_release: if root.money_out() == True and root.death == False and root.correct == True: app.root.change_screen('check_choice_screen')
+
 
 
 
@@ -380,26 +400,47 @@
     BoxLayout:
         orientation:'vertical'
 
+    GridLayout:
+        cols:1
+        padding:270,140,400,600
+        spacing:110
         Label:
             id: money_in_label
             text: '[color=#3E769B]Введите сумму[/color]'
             markup: True
+            font_size: 25
+
 
         TextInput:
-            id: money_input
+            id: money_in_input
             halign: 'center'
             hint_text: 'money'
+            size_hint:None,None
+            size:(250,60)
             on_text: root.set_money(self.text)
             input_filter: 'int'
-
-        Button:
-            text: 'оппа сюда нада'
-            #on_press: root.money_in()
-            on_release: if root.money_in() == True and root.death == False and root.correct == True: app.root.change_screen('check_choice_screen')
+    GridLayout:
+        cols:2
+        rows:1
+        padding:190,400,200,50
+        spacing:30
 
         Button:
             text: 'Отмена'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('menu_screen')
+        Button:
+            text: 'Ввод'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
+            #on_press: root.money_in()
+            on_release: if root.money_in() == True and root.death == False and root.correct == True: app.root.change_screen('check_choice_screen')
+
 
 
 
@@ -408,15 +449,23 @@
     money:money
     BoxLayout:
         orientation: 'vertical'
+    GridLayout:
+        cols:1
+        padding:270,140,400,600
+        spacing:60
         Label:
             id: check_label
             markup: True
-            text: '[color=#FF9966]Введите номер и сумму[/color]'
+            text: '[color=#3E769B]Введите номер и сумму[/color]'
+            font_size: 25
+
 
         PhoneInput:
             halign: 'center'
             id: number
             multiline:False
+            size_hint:None,None
+            size:(250,60)
 #            input_filter: 'int'
             text: '+375 '
 
@@ -424,18 +473,35 @@
         TextInput:
             id: money
             halign: 'center'
-            hint_text: 'сумма деняк'
+            valign: 'center'
+            size_hint:None,None
+            size:(250,60)
+            hint_text: 'Введите сумму'
             multiline:False
             input_filter: 'int'
 
+    GridLayout:
+        cols:2
+        rows:1
+        padding:190,420,200,50
+        spacing:30
+
+        Button:
+            text: 'Отмена'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
+            on_press: app.root.change_screen('menu_screen')
 
         Button:
             text: 'Продолжить'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: root.phone_payment()
             on_release: if root.death == False: app.root.change_screen('check_choice_screen')
-        Button:
-            text: 'Отмена'
-            on_press: app.root.change_screen('menu_screen')
 
 
 <BYNtoUSD>
