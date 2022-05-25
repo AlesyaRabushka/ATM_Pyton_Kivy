@@ -70,15 +70,15 @@ class PinScreen(MDScreen):
     def check_pin(self):
         flag = self.controller.check_pin()
         if flag == True:
-            self.ids.pin_label.text = '[color=#FF88FF]pin is correct[/color]'
+            self.ids.pin_label.text = '[color=#3E769B]Верный пин-код[/color]'
             self.clean_input()
             return 1
         else:
-            self.ids.pin_label.text = '[color=#FF88FF]Неверный пин-код!\nПовторите попытку[/color]'
+            self.ids.pin_label.text = '[color=#FF0000]Неверный пин-код!\nПовторите попытку[/color]'
             self.pin_count += 1
 
         if self.pin_count == 3:
-            self.ids.pin_label.text = '[color=#FF88FF]bad[/color]'
+            self.ids.pin_label.text = '[color=#FF0000]Вы израсходовали допустимое количество попыток[/color]'
             self.pin_count = 0
             self.not_correct = True
             return 2
@@ -111,9 +111,9 @@ class MoneyOutChoiceScreen(MDScreen):
 
     def set_money(self, money):
         if self.controller.set_money(money) == False:
-            self.ids.money_out_label.text = '[color=#FF9900]the money input is not what i wanted[/color]'
+            self.ids.money_out_label.text = '[color=#FF0000]Неверный ввод данных[/color]'
         else:
-            self.ids.money_out_label.text = '[color=#FF9900]okeyy[/color]'
+            #self.ids.money_out_label.text = '[color=#FF9900]okeyy[/color]'
             self.controller.money_out()
 
     def money_out(self):
@@ -130,21 +130,22 @@ class MoneyOutScreen(MDScreen):
 
     def set_money(self, money):
         if self.controller.set_money(money) == False:
-            self.ids.money_out_label.text = '[color=#FF9900]the money input is not what i wanted[/color]'
+            self.ids.money_out_label.text = '[color=#FF0000]Неверный ввод данных[/color]'
         else:
-            self.ids.money_out_label.text = '[color=#FF9900]okeyy[/color]'
+            pass
+            # self.ids.money_out_label.text = '[color=#FF9900]okeyy[/color]'
 
     def money_out(self):
         flag = self.controller.money_out()
         print(flag)
         if flag == 4 :
-            self.ids.money_out_label.text = '[color=#FF9966]Лимит средств превышен[/color]'
+            self.ids.money_out_label.text = '[color=#FF0000]Лимит средств превышен[/color]'
             return False
         elif flag == 2:
-            self.ids.money_out_label.text = '[color=#FF9966]Недостаточно средств на счете[/color]'
+            self.ids.money_out_label.text = '[color=#FF0000]Недостаточно средств на счете[/color]'
             return False
         elif flag == 3:
-            self.ids.money_out_label.text = '[color=#FF9966]Неверный формат ввода[/color]'
+            self.ids.money_out_label.text = '[color=#FF0000]Неверный формат ввода[/color]'
             return False
         elif flag == 5:
             self.death = True
@@ -163,11 +164,12 @@ class MoneyInScreen(MDScreen):
     def set_money(self, money):
         flag = self.controller.set_money(money)
         if flag == False:
-            self.ids.money_in_label.text = '[color=#FF9900]the money input is not what i wanted[/color]'
+            self.ids.money_in_label.text = '[color=#FF0000]Неверный формат ввода данных[/color]'
         elif flag == 5:
             self.death = True
         else:
-            self.ids.money_in_label.text = '[color=#FF9900]okeyy[/color]'
+            pass
+            # self.ids.money_in_label.text = '[color=#FF9900]okeyy[/color]'
 
     def money_in(self):
         flag = self.controller.money_in()
@@ -217,16 +219,16 @@ class CheckScreen(MDScreen):
 
     def show_check(self):
         check = ''
-        check += '[color=#FF9966]---------------------------------------------------[/color]\n'
-        check += '[color=#FF9966]                     ЧЕК[/color]\n'
-        check += '[color=#FF9966]---------------------------------------------------[/color]\n'
+        check += '[color=#000000]---------------------------------------------------[/color]\n'
+        check += '[color=#000000]                     ЧЕК[/color]\n'
+        check += '[color=#000000]---------------------------------------------------[/color]\n'
         date = datetime.now()
-        check += '[color=#FF9966]Date: ' + date.strftime('%d-%m-%Y') + '[/color]\n'
-        check += '[color=#FF9966]Time: ' + date.strftime('%H:%M:%S') +'[/color]\n'
-        check += '[color=#FF9966]---------------------------------------------------[/color]\n'
+        check += '[color=#000000]Date: ' + date.strftime('%d-%m-%Y') + '[/color]\n'
+        check += '[color=#000000]Time: ' + date.strftime('%H:%M:%S') +'[/color]\n'
+        check += '[color=#000000]---------------------------------------------------[/color]\n'
 
-        check += '[color=#FF9966]Operation: ' + self.controller.last_operation + '[/color]\n'
-        check += '[color=#FF9966]---------------------------------------------------[/color]\n'
+        check += '[color=#000000]Operation: ' + self.controller.last_operation + '[/color]\n'
+        check += '[color=#000000]---------------------------------------------------[/color]\n'
 
         self.ids.check_label.text = check
 
@@ -243,8 +245,8 @@ class BalanceScreen(MDScreen):
 
     def set_balance(self, byn, usd):
         print(byn, usd)
-        self.ids.balance_byn_label.text = '[color=#FF9966]' + byn + '[/color]'
-        self.ids.balance_usd_label.text = '[color=#FF9966]' + usd + '[/color]'
+        self.ids.balance_byn_label.text = '[color=#3E769B]' + byn + '[/color]'
+        self.ids.balance_usd_label.text = '[color=#3E769B]' + usd + '[/color]'
 
 
 
@@ -297,7 +299,7 @@ class TelephonePaymentScreen(MDScreen):
         if flag == 5:
             self.death = True
         if not flag:
-            self.ids.tel_label.text = '[color=#FF9966]Недостаточно средств[/color]'
+            self.ids.tel_label.text = '[color=#FF0000]Недостаточно средств[/color]'
             return False
         else:
             return True
