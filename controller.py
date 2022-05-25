@@ -28,7 +28,7 @@ class Controller:
 
         self.pin = 0
         self.card = 0
-        self.money = 0
+        self.money = -1
         self.phone_number = ''
         self.last_operation = ''
 
@@ -84,20 +84,27 @@ class Controller:
 
     def money_out(self):
         try:
-            give_money = GiveMoney()
-            print(self.card.get_balance_byn())
-            flag = give_money.money_out(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
-            self.last_operation = 'Выдача наличных'
-            return flag
+            if self.money == -1:
+                return -1
+            else:
+                give_money = GiveMoney()
+                print(self.card.get_balance_byn())
+                flag = give_money.money_out(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
+                self.last_operation = 'Выдача наличных'
+                return flag
         except:
             self.screen_manager.change_screen('death_screen')
             return 5
 
     def money_in(self):
         try:
-            get_money = GetMoney()
-            get_money.money_in(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
-            self.last_operation = 'Пополнение средств'
+            if self.money == '':
+                return -1
+            else:
+                get_money = GetMoney()
+                get_money.money_in(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
+                self.last_operation = 'Пополнение средств'
+                return flag
         except:
             self.screen_manager.change_screen('death_screen')
             return 5

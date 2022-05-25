@@ -320,7 +320,7 @@
         Button:
             text: 'продолжить'
             #on_press: root.money_out()
-            on_release: if root.money_out() == True and root.death == False: app.root.change_screen('check_choice_screen')
+            on_release: if root.money_out() == True and root.death == False and root.correct == True: app.root.change_screen('check_choice_screen')
 
         Button:
             text: 'Отмена'
@@ -345,8 +345,8 @@
 
         Button:
             text: 'оппа сюда нада'
-            on_press: root.money_in()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+            #on_press: root.money_in()
+            on_release: if root.money_in() == True and root.death == False and root.correct == True: app.root.change_screen('check_choice_screen')
 
         Button:
             text: 'Отмена'

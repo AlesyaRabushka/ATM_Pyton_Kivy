@@ -2634,3 +2634,92 @@ Status: Success
 Operation type: Пополнение счета
 Status: Success
 
+25-05-2022  13:10:11
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  13:14:28
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  13:14:31
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  13:14:31
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  13:14:32
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  13:14:32
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  13:14:32
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  13:14:32
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  13:14:32
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  13:14:32
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  13:17:09
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  13:18:19
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  13:21:13
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  13:22:14
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  13:24:54
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  13:26:20
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  13:26:48
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  13:30:49
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  13:32:47
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  13:32:58
+Operation type: Пополнение счета
+Status: Success
+
