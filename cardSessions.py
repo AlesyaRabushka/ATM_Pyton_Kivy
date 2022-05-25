@@ -508,16 +508,15 @@ class Currency(CardCheck):
 
 class Telephone(GiveMoney):
     """оплата телефона"""
-
+    def value_check(self,card,money):
+        if int(money) > int(card.get_balance_byn()):
+            return False
+        else:
+            return True
     def telephone_pay(self, card, money: int, tel_number: str, bankomat_storage, single_t):
-        value = card.get_balance_byn()
-        value2 = value-money
-        if value2 >= 0:
-            card.set_balance_byn(value2)
-        elif value2 < 0:
-            card.set_balance_byn(0)
-
+        self.value_check(card,money)
         self.copy_data()
+        card.set_balance_byn(int(card.get_balance_byn())-money)
         tel_number=tel_number+'\n'
         from_card = open('newtelephone.txt', 'r')
         to_card = open('telephone.txt', 'w')

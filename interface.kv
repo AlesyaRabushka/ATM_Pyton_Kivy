@@ -42,7 +42,7 @@
 
 
         Button:
-            text: 'Alena Sklema'
+            text: 'Aleksey Smelov'
             background_color:'#74B0D8'
             background_normal:''
             size_hint: 1, 0.3
@@ -52,7 +52,7 @@
             on_release: app.root.change_screen('death_screen') if root.death_screen_value % 2 == 0 else app.root.change_screen('pin_screen')
 
         Button:
-            text: 'Aleksey Smelov'
+            text: 'Alena Sklema'
             background_color:'#74B0D8'
             background_normal:''
             size_hint: 1, 0.3
@@ -280,7 +280,7 @@
     BoxLayout:
         orientation: 'vertical'
         Label:
-            id: check_label
+            id: tel_label
             markup: True
             text: '[color=#FF9966]Введите номер и сумму[/color]'
 
@@ -293,12 +293,10 @@
             id: money
             hint_text: 'сумма деняк'
             multiline:False
-            input_filter: int
 
         Button:
             text: 'Продолжить'
-            on_press: root.phone_payment()
-            on_release: app.root.change_screen('check_screen')
+            on_release: if root.phone_payment(): app.root.change_screen('check_choice_screen')
 
 
 <BYNtoUSD>
@@ -345,17 +343,7 @@
 
 
 
-<CheckScreen>
-    BoxLayout:
-        orientation:'vertical'
 
-        Label:
-            id: check_label
-            markup: True
-
-        Button:
-            text:'continue'
-            on_press: app.root.change_screen('continue_screen')
 
 
 <ContinueScreen>

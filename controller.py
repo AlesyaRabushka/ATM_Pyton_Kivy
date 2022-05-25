@@ -105,13 +105,19 @@ class Controller:
 
 
     def telephone_payment(self,number, money):
-        try:
-            telephone = Telephone()
+        #try:
+        telephone = Telephone()
+        if not telephone.value_check(self.card,money):
+            return False
+        else:
             telephone.telephone_pay(self.card, int(money), number, self.storage, self.single_t)
             self.last_operation = 'Пополнение средств телефона'
-        except:
-            self.screen_manager.change_screen('death_screen')
-            return 5
+            return True
+
+
+        #except:
+           # self.screen_manager.change_screen('death_screen')
+            #return 5
 
 
     def fromBUNtoUSD(self,money):

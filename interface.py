@@ -282,6 +282,7 @@ class PhoneInput(TextInput):
 class TelephonePaymentScreen(MDScreen):
     number = ObjectProperty()
     money = ObjectProperty()
+    check_label = ObjectProperty()
     def __init__(self, controller, **kwargs):
         super().__init__(**kwargs)
         self.controller = controller
@@ -292,8 +293,15 @@ class TelephonePaymentScreen(MDScreen):
         number = self.ids.number.text
         money = self.ids.money.text
         flag = self.controller.telephone_payment(number, money)
-        if flag == 5:
-            self.death = True
+        #if flag == 5:
+            #self.death = True
+        if not flag:
+            self.ids.tel_label.text = '[color=#FF9966]Недостаточно средств[/color]'
+            return False
+        else:
+            return True
+
+
 
 
 
