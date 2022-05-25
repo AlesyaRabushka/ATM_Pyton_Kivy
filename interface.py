@@ -276,8 +276,9 @@ class BalanceScreen(MDScreen):
 
     def set_balance(self, byn, usd):
         print(byn, usd)
-        self.ids.balance_byn_label.text = '[color=#3E769B]' + str(byn) + '[/color]'
-        self.ids.balance_usd_label.text = '[color=#3E769B]' + str(usd) + '[/color]'
+        self.ids.balance_byn_label.text = '[color=#FF8C00]' + str(byn) + '[/color]'
+        self.ids.balance_usd_label.text = '[color=#FF8C00]' + str(usd) + '[/color]'
+
 
 
 

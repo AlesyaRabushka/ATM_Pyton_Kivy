@@ -2986,3 +2986,16 @@ Status: Success
 Operation type: Выдача наличных
 Status: Success
 
+25-05-2022  16:18:00
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  16:18:04
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:18:31
+Operation type: Пополнение счета
+Status: Success
+
