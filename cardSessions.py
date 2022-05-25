@@ -47,18 +47,21 @@ class GiveMoney:
                 # проверяем, достаточно ли средств в банкомате
 
                 if money > storage:
+                    if gui == 0:
                         print('\t----------Лимит средств превышен!----------\n')
-                        single_t.log('Выдача наличных', False, ' Лимит средств превышен')
-                        if gui == 1:
-                            return 4
+                    single_t.log('Выдача наличных', False, ' Лимит средств превышен')
+                    if gui == 1:
+                        return 4
                 else:
                     if money > int(card.get_balance_byn()):
-                        print('\t----------Недостаточно средств----------\n')
+                        if gui == 0:
+                            print('\t----------Недостаточно средств----------\n')
                         single_t.log('Выдача наличных', False, ' Недостаточно средств')
                         if gui == 1:
                             return 2
                     elif money < 0:
-                        print('\t----------Неверный формат ввода----------\n')
+                        if gui == 0:
+                            print('\t----------Неверный формат ввода----------\n')
                         single_t.log('Выдача наличных', False, ' Неверный формат ввода')
                         if gui == 1:
                             return 3
@@ -126,14 +129,17 @@ class GiveMoney:
 
                 # проверяем, достаточно ли средств в банкомате
                 if money > storage:
-                    print('\t----------Лимит средств превышен!----------\n')
+                    if gui == 0:
+                        print('\t----------Лимит средств превышен!----------\n')
                     single_t.log('Выдача наличных', False, ' Лимит средств превышен')
                 else:
                     if money > int(card.get_balance_usd()):
-                        print('\t----------Недостаточно средств----------\n')
+                        if gui == 0:
+                            print('\t----------Недостаточно средств----------\n')
                         single_t.log('Выдача наличных', False, ' Недостаточно средств')
                     elif money < 0:
-                        print('\t----------Неверный формат ввода----------\n')
+                        if gui == 0:
+                            print('\t----------Неверный формат ввода----------\n')
                         single_t.log('Выдача наличных', False, ' Неверный формат ввода')
                     else:
                         # изменяем количество средств хранилища
@@ -294,6 +300,8 @@ class GetMoney:
             if gui == 1:
                 if money <= 0:
                     return 5
+                elif money > 1000:
+                    return False
             new_money = float(card.get_balance_byn()) + money
             find = int(card.get_chosen()) - 1
             single_t.log('Пополнение счета', True,'')
