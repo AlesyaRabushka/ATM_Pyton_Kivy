@@ -329,6 +329,7 @@ class TelephonePaymentScreen(MDScreen):
         money = self.ids.money.text
         flag = self.controller.telephone_payment(number, money)
         if flag == 5:
+            self.ids.money_in_label.text = '[color=#3E769B]Введите сумму выдачи[/color]'
             self.death = True
         if not flag:
             self.ids.tel_label.text = '[color=#FF0000]Недостаточно средств[/color]'

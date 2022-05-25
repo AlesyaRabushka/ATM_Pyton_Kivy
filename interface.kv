@@ -79,7 +79,7 @@
         cols:1
         rows:3
         padding:300,200,300,200
-        spacing:30
+        spacing:40
 
         Label:
             id: pin_label
@@ -635,40 +635,69 @@
 <CheckScreen>
     BoxLayout:
         orientation:'vertical'
-
+    GridLayout:
+        cols:1
+        padding:300,250,400,200
+        spacing:140
         Label:
             id: check_label
             markup: True
+            font_size: 25
 
         Button:
-            text:'continue'
+            text:'Продолжить'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('continue_screen')
 
 
 <ChangePinScreen>
     BoxLayout:
         orientation: 'vertical'
-
+    GridLayout:
+        cols:1
+        padding:300,200,300,400
+        spacing:100
         Label:
             id: change_pin_label
-            text: '[color=#FF9966]Введите новый пин-код[/color]'
+            text: '[color=#3E769B]Введите новый пин-код[/color]'
             markup: True
+            font_size: 20
 
         PinInput:
             id: pin_input
             halign: 'center'
             hint_text: 'ПИН-КОД'
+            size_hint:None,None
+            size:(200,30)
+            multiline:False
             on_text: root.set_pin(self.text)
             input_filter: 'int'
-
-        Button:
-            text: 'ВВОД'
-            on_press: if root.change_pin() == True: app.root.change_screen('check_choice_screen')
-            on_release: if root.death == True: app.root.change_screen('death_screen')
+    GridLayout:
+        cols:2
+        rows:1
+        padding:190,400,200,100
+        spacing:30
 
         Button:
             text: 'Отмена'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,50)
             on_press: app.root.change_screen('menu_screen')
+
+        Button:
+            text: 'ВВОД'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,50)
+            on_press: if root.change_pin() == True: app.root.change_screen('check_choice_screen')
+            on_release: if root.death == True: app.root.change_screen('death_screen')
+
 
 
 
@@ -676,27 +705,48 @@
 <ContinueScreen>
     BoxLayout:
         orientation: 'vertical'
-
+    GridLayout:
+        cols:1
+        padding:400,200,400,450
+        spacing:30
         Label:
-            text:'[color=#FF9966]Желаете продолжить?[/color]'
+            text:'[color=#3E769B]Желаете продолжить?[/color]'
             markup:  True
-
-        Button:
-            text: 'Продолжить'
-            on_press: app.root.change_screen('pin_screen')
+            font_size: 25
+    GridLayout:
+        cols:2
+        rows:1
+        padding:190,300,200,200
+        spacing:30
 
         Button:
             text: 'Завершить сеанс'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('exit_screen')
+        Button:
+            text: 'Продолжить'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
+            on_press: app.root.change_screen('pin_screen')
+
 
 
 <WarningScreen>
     BoxLayout:
         orientation: 'vertical'
-
+    GridLayout:
+        cols:1
+        padding:400,280,400,400
+        spacing:30
         Label:
-            text: '[color=#FF9966]Задерживаем карточку[/color]'
+            text: '[color=#3E769B]Задерживаем карточку[/color]'
             markup: True
+            font_size: 25
 
 <DeathScreen>
     GridLayout:
@@ -735,10 +785,23 @@
 <ExitScreen>
     BoxLayout:
         orientation: 'vertical'
-
+    GridLayout:
+        cols:1
+        padding:400,230,400,450
+        spacing:20
         Label:
-            text: '[color=#FF9966]Заберите карточку[/color]'
+            text: '[color=#3E769B]Заберите карточку[/color]'
             markup: True
+            font_size: 25
+    GridLayout:
+        cols:2
+        rows:1
+        padding:300,300,400,200
+        spacing:30
         Button:
-            text: 'exit'
+            text: 'Выход'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.get_running_app().stop()
