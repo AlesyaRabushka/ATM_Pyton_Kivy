@@ -2977,3 +2977,7 @@ Status: Success
 Operation type: Выдача наличных
 Status: Success
 
+25-05-2022  17:42:03
+Operation type: Пополнение счета
+Status: Success
+
