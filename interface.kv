@@ -194,45 +194,88 @@
         orientation: 'vertical'
         adaptive_size: True
 
+    GridLayout:
+        cols:1
+        padding:300,70,300,600
+
         Label:
             id: money_out_label
-            text:'[color=#FF99966]Выберите сумму выдачи[/color]'
+            text:'[color=#3E769B]Выберите сумму выдачи[/color]'
+            markup: True
+            font_size: 30
 
+    GridLayout:
+        cols:2
+        rows:3
+        padding:190,160,300,100
+        spacing:30
         Button:
             text: '5'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: root.set_money(5)
             on_release: app.root.change_screen('check_choice_screen')
 
         Button:
             text: '10'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: root.set_money(10)
             on_release: app.root.change_screen('check_choice_screen')
 #            on_release: root.money_out()
 
         Button:
             text: '20'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: root.set_money(20)
             on_release: app.root.change_screen('check_choice_screen')
 #            on_release: root.money_out()
 
         Button:
             text: '50'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: root.set_money(50)
             on_release: app.root.change_screen('check_choice_screen')
 #            on_release: root.money_out()
 
         Button:
             text: '100'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: root.set_money(100)
             on_release: app.root.change_screen('check_choice_screen')
 #            on_release: root.money_out()
 
         Button:
             text: 'Другая сумма'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('money_out_screen')
-
+    GridLayout:
+        cols:1
+        rows:1
+        padding:305,470,250,50
+        spacing:30
         Button:
             text: 'Отмена'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('menu_screen')
 
 
