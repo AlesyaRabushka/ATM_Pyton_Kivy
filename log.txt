@@ -2630,12 +2630,7 @@ Status: Success
 Operation type: Пополнение счета телефона
 Status: Success
 
-25-05-2022  13:01:50
-Operation type: Выдача наличных
+25-05-2022  12:32:37
+Operation type: Пополнение счета
 Status: Success
-
-25-05-2022  13:06:30
-Operation type: Выдача наличных
-Status: Fail
-Error type:  Недостаточно средств
 
