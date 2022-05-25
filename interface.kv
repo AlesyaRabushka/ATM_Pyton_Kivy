@@ -629,9 +629,15 @@
 <DeathScreen>
     BoxLayout:
         orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgb: (0,0,204/255)
+            Rectangle:
+                pos: self.pos
+                size: self.size
 
         Label:
-            text: '[color=#FF9966]Это экран смерти\nперезапусти прогу[/color]'
+            id: death_label
             markup: True
 
 

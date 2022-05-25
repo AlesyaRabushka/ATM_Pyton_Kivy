@@ -62,18 +62,19 @@ class MyApp(MDApp):
 
     def _on_keyboard_down(self, *args):
         if self.sm.current == 'death_screen':
-            # if len(self.make_alive) < 3:
-            #     self.make_alive.append(args[2])
-            # print('yes', args[2])
-            # if len(self.make_alive) == 3:
-            #     string = str(self.make_alive)
-            #     if 'İ' in string and 'ı' in string and 'Ď' in string:
-            #         self.sm.current = 'restart_screen'
-            #     else:
-            #         self.make_alive = []
-            if args[2] == ' ':
-                #print('yes',args[2])
-                self.sm.current = 'restart_screen'
+            if len(self.make_alive) < 3:
+                self.make_alive.append(args[2])
+
+            if len(self.make_alive) == 3:
+                string = str(self.make_alive)
+                if 'İ' in string and 'ı' in string and 'Ĵ' in string:
+                    self.sm.current = 'restart_screen'
+                else:
+                    self.make_alive = []
+
+            # if args[2] == ' ':
+            #     #print('yes',args[2])
+            #     self.sm.current = 'restart_screen'
         elif self.sm.current == 'restart_screen':
             if args[2] == ' ':
                 #print('yes',args[2])
