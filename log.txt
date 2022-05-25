@@ -3107,3 +3107,44 @@ Status: Success
 Operation type: Cмена пин-код
 Status: Success
 
+25-05-2022  23:42:30
+Operation type: Пополнение счета телефона
+Status: Success
+
+25-05-2022  23:42:42
+Operation type: Cмена пин-код
+Status: Success
+
+25-05-2022  23:42:54
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+25-05-2022  23:42:58
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+25-05-2022  23:42:58
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+25-05-2022  23:42:58
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+25-05-2022  23:43:08
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+25-05-2022  23:45:58
+Operation type: Cмена пин-код
+Status: Success
+
+25-05-2022  23:46:22
+Operation type: Cмена пин-код
+Status: Success
+

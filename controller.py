@@ -187,7 +187,7 @@ class Controller:
 
     def change_pin(self, new_pin):
         try:
-            flag = ChangePin.change_card_pin(self.card, self.card.get_pin(), self.single_t, 1, new_pin)
+            flag = ChangePin.change_card_pin(self.card, int(self.card.get_pin()), self.single_t, 1, int(new_pin))
             print(flag)
             return flag
         except:
