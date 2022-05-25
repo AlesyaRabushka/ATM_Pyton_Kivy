@@ -168,7 +168,7 @@
             size:(300,100)
             on_press: app.root.change_screen('telephone_payment')
         Button:
-            text: 'Транзакция в $'
+            text: 'Транзакция в USD'
             background_color:'#74B0D8'
             background_normal:''
             size_hint:None,None
@@ -283,21 +283,66 @@
     BoxLayout:
         orientation: 'vertical'
         adaptive_size: True
+    GridLayout:
+        cols:1
+        padding:300,170,300,600
 
         Label:
+            id: money_out_label
+            text:'[color=#3E769B]Информация о балансе[/color]'
+            markup: True
+            font_size: 25
+
+    GridLayout:
+        cols:2
+        rows:1
+        padding:240,230,400,250
+        spacing:20
+        Label:
+            text:'[color=#3E769B]BYN    [/color]'
+            font_size: 20
+            markup: True
+
+        Label:
+            text:'[color=#3E769B]                                      USD[/color]'
+            font_size: 20
+            markup: True
+
+    GridLayout:
+        cols:2
+        rows:1
+        padding:240,230,200,250
+        spacing:30
+        Label:
+            text:'[color=#3E769B]BYN[/color]'
             id: balance_byn_label
+            font_size: 20
             markup: True
 
         Label:
+            text:'[color=#3E769B]$[/color]'
             id: balance_usd_label
+            font_size: 20
             markup: True
-
+    GridLayout:
+        cols:2
+        rows:1
+        padding:190,400,200,50
+        spacing:30
         Button:
-            text:'продолжить'
+            text:'Продолжить'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('menu_screen')
 
         Button:
             text: 'Отмена'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('menu_screen')
 
 
@@ -334,7 +379,7 @@
 
         Label:
             id: money_in_label
-            text: '[color=#FF9966]Введите сумму[/color]'
+            text: '[color=#3E769B]Введите сумму[/color]'
             markup: True
 
         TextInput:
