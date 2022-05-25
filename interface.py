@@ -257,25 +257,27 @@ class PhoneInput(TextInput):
         self.phone = ''
 
     def insert_text(self, string, from_undo = False):
-        new_text = self.text + string
-        print(self.text)
-        print(new_text)
-        if len(new_text) != 0:
-            if len(new_text) <= 17:
-                if len(new_text) == 4:
-                    string += ' '
-                    TextInput.insert_text(self, string, from_undo = from_undo)
-                elif len(new_text) == 7:
-                    string += ' '
-                    TextInput.insert_text(self, string, from_undo=from_undo)
-                elif len(new_text) == 11:
-                    string += ' '
-                    TextInput.insert_text(self, string, from_undo=from_undo)
-                elif len(new_text) == 14:
-                    string += ' '
-                    TextInput.insert_text(self, string, from_undo=from_undo)
-                else:
-                    TextInput.insert_text(self, string, from_undo=from_undo)
+        numbers = '1234567890 '
+        if string in numbers:
+            new_text = self.text + string
+            print(self.text)
+            print(new_text)
+            if len(new_text) != 0:
+                if len(new_text) <= 17:
+                    if len(new_text) == 4:
+                        string += ' '
+                        TextInput.insert_text(self, string, from_undo = from_undo)
+                    elif len(new_text) == 7:
+                        string += ' '
+                        TextInput.insert_text(self, string, from_undo=from_undo)
+                    elif len(new_text) == 11:
+                        string += ' '
+                        TextInput.insert_text(self, string, from_undo=from_undo)
+                    elif len(new_text) == 14:
+                        string += ' '
+                        TextInput.insert_text(self, string, from_undo=from_undo)
+                    else:
+                        TextInput.insert_text(self, string, from_undo=from_undo)
 
 
 class TelephonePaymentScreen(MDScreen):
@@ -292,8 +294,8 @@ class TelephonePaymentScreen(MDScreen):
         number = self.ids.number.text
         money = self.ids.money.text
         flag = self.controller.telephone_payment(number, money)
-        #if flag == 5:
-            #self.death = True
+        if flag == 5:
+            self.death = True
         if not flag:
             self.ids.tel_label.text = '[color=#FF9966]Недостаточно средств[/color]'
             return False
