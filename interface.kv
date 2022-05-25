@@ -699,6 +699,24 @@
             markup: True
 
 <DeathScreen>
+    GridLayout:
+        cols:1
+        #orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgb: (0,0,204/255)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            pos_hint:  {'center_x': .2, 'center_y': .5}
+#            pos_hint: {'center_x': .1, 'center_y': .5}
+            font_size: 20
+            id: death_label
+            markup: True
+
+<RestartScreen>
     BoxLayout:
         orientation: 'vertical'
         canvas.before:
@@ -709,7 +727,8 @@
                 size: self.size
 
         Label:
-            id: death_label
+            id: restart_label
+            font_size: 25
             markup: True
 
 

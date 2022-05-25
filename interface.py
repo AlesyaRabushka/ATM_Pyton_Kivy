@@ -366,11 +366,16 @@ class CheckChoiceScreen(MDScreen):
 class DeathScreen(MDScreen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.ids.death_label.text = '[color=#FFFFFF]    \
-        The problem has been detected and windows has been shut down\n \
+        self.ids.death_label.text = '[color=#FFFFFF]\
+         The problem has been detected and windows has been shut down to \n \
+        prevent damage to your computer.\n \
         if this is the first time you\'ve seen this stop error screen,\n \
         restart yor computer. If this screen appears again, follow these steps:\n\n \
-        Press Ctrl + Shift + alt to continue[/color]'
+        check to make sure any new hardware or software is properly installed.\n  \
+        If this is a new installation, asl your hardware or software manufacturer\n \
+        for any windows updates you might need.\n\n \
+        Beginning drop of physical memory\n\n \
+        Press Ctrl + Shift + Alt to continue[/color]'
 
 class WarningScreen(MDScreen):
     pass
@@ -407,7 +412,11 @@ class USDtoBYN(MDScreen):
 
 
 class RestartScreen(MDScreen):
-    pass
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.ids.restart_label.text = '[color=#FFFFFF]\
+        The system has been restarted\n\n \
+        Press Space to continue[/color]'
 
 
 Builder.load_file(os.path.join(os.path.dirname(__file__), "interface.kv"))
