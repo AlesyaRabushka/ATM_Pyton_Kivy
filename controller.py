@@ -26,6 +26,8 @@ class Controller:
         self.storage.set_storage_byn(10000)
         self.storage.set_storage_usd(1000)
 
+        self.pin_is_changed = False
+
         self.pin = 0
         self.card = 0
         self.money = -1

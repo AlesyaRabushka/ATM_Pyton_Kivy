@@ -2878,186 +2878,232 @@ Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  15:56:58
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:35:02
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:35:58
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:36:23
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:36:43
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:36:59
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:45:20
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:45:48
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:46:05
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:46:19
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:46:31
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:47:12
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:47:31
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:47:48
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  16:47:58
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:01:25
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:04:15
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:04:45
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:05:09
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:05:24
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:05:38
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:05:59
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:06:16
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:06:33
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:06:44
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  17:42:03
-Operation type: Пополнение счета
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  18:44:28
-Operation type: Пополнение счета
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  18:45:16
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Fail
-Error type:  Лимит средств превышен
+Error type:  пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 25-05-2022  18:46:46
-Operation type: Пополнение счета
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  18:46:56
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  18:47:35
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  18:47:45
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Fail
-Error type:  Недостаточно средств
+Error type:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 25-05-2022  18:51:29
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Fail
-Error type:  Недостаточно средств
+Error type:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 25-05-2022  18:52:20
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Fail
-Error type:  Недостаточно средств
+Error type:  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 25-05-2022  18:52:59
-Operation type: Пополнение счета
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  18:53:06
-Operation type: Выдача наличных
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  18:53:22
-Operation type: Пополнение счета телефона
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  18:55:15
-Operation type: Пополнение счета
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+Status: Success
+
+25-05-2022  19:06:11
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+Status: Success
+
+25-05-2022  19:06:26
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  19:52:49
-Operation type: Пополнение счета телефона
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+Status: Success
+
+25-05-2022  20:19:13
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+Status: Success
+
+25-05-2022  20:21:08
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  20:38:20
-Operation type: Пополнение счета телефона
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  20:40:13
-Operation type: Пополнение счета телефона
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  20:41:45
-Operation type: Пополнение счета телефона
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  20:42:11
-Operation type: Пополнение счета телефона
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  20:44:58
-Operation type: Пополнение счета телефона
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 Status: Success
 
 25-05-2022  20:46:12
-Operation type: Пополнение счета телефона
+Operation type: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+Status: Success
+
+25-05-2022  20:53:42
+Operation type: Cмена пин-код
+Status: Success
+
+25-05-2022  20:53:56
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+25-05-2022  20:54:07
+Operation type: Смена пин-код
+Status: Fail
+Error type:  Неверный пин-код
+
+25-05-2022  20:54:26
+Operation type: Cмена пин-код
+Status: Success
+
+25-05-2022  21:01:45
+Operation type: Cмена пин-код
+Status: Success
+
+25-05-2022  21:02:23
+Operation type: Cмена пин-код
+Status: Success
+
+25-05-2022  21:08:45
+Operation type: Cмена пин-код
 Status: Success
 
