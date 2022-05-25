@@ -73,6 +73,8 @@ class PinScreen(MDScreen):
             #self.ids.pin_label.text = '[color=#3E769B]Верный пин-код[/color]'
             self.clean_input()
             return 1
+        elif flag == 5:
+            self.ids.pin_label.text = '[color=#3E769B]Введите пин-код\n[/color]'
         else:
             self.ids.pin_label.text = '[color=#FF0000]Неверный пин-код!\nПовторите попытку[/color]'
             self.pin_count += 1
@@ -127,19 +129,21 @@ class MoneyOutScreen(MDScreen):
         self.controller = controller
         self.death = False
         self.correct = True
+        self.correct_set_money = False
 
 
     def set_money(self, money):
-        if self.controller.set_money(money) == False:
-            self.correct = False
-            self.ids.money_out_label.text = '[color=#FF0000]Неверный ввод данных[/color]'
-        else:
-            pass
+        self.controller.set_money(money)
             # self.ids.money_out_label.text = '[color=#FF9900]okeyy[/color]'
 
     def money_out(self):
         flag = self.controller.money_out()
         if flag == -1:
+            self.correct = False
+            self.ids.money_out_label.text = '[color=#FF0000]Неверный формат ввода[/color]'
+            self.ids.money_input.text = ''
+            return False
+        elif flag == 6:
             self.correct = False
             self.ids.money_out_label.text = '[color=#FF0000]Неверный формат ввода[/color]'
             return False
@@ -154,7 +158,9 @@ class MoneyOutScreen(MDScreen):
             return False
         elif flag == 5:
             self.death = True
-        else:
+        elif flag == True:
+            self.death = False
+            self.correct = True
             return True
 
 
@@ -169,16 +175,6 @@ class MoneyInScreen(MDScreen):
 
     def set_money(self, money):
         self.controller.set_money(money)
-        # if flag == False:
-        #     self.ids.money_in_label.text = '[color=#FF0000]Неверный формат ввода данных[/color]'
-        #     self.correct = False
-        #     return False
-        # elif flag == 5:
-        #     self.death = True
-        #     return False
-        # else:
-        #     return True
-            # self.ids.money_in_label.text = '[color=#FF9900]okeyy[/color]'
 
     def money_in(self):
         flag = self.controller.money_in()
@@ -189,9 +185,16 @@ class MoneyInScreen(MDScreen):
             self.correct = False
             self.ids.money_in_label.text = '[color=#FF0000]Неверный формат ввода данных[/color]'
             return False
+        elif flag == 6:
+            self.ids.money_in_label.text = '[color=#FF0000]Неверный формат ввода данных[/color]'
+            return False
         elif flag == True:
+            self.death = False
+            self.correct = True
             return True
-        else: return False
+        else:
+            self.ids.money_in_label.text = '[color=#FF0000]Неверный формат ввода данных[/color]'
+            return False
 
 
 class MoneyOperations(MDScreen):

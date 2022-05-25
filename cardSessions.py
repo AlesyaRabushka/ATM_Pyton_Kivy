@@ -342,6 +342,7 @@ class GetMoney:
             if gui == 0:
                 c = CardCheck()
                 c.chek('Пополнение счета')
+
         # ветка американ деньги
         elif currency == 'USD':
             new_money = float(card.get_balance_usd()) + money

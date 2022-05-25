@@ -46,7 +46,7 @@
             background_normal:''
             size_hint: 1, 0.3
             pos_hint: {"center_x": .5,"center_y":.5}
-            on_press: root.choose_card(2)
+            on_press: root.choose_card(3)
             on_release: app.root.change_screen('pin_screen')
             on_release: app.root.change_screen('pin_screen')
 
@@ -57,7 +57,7 @@
             background_normal:''
             size_hint: 1, 0.3
             pos_hint: {"center_x": .5,"center_y":.5}
-            on_press: root.choose_card(3)
+            on_press: root.choose_card(2)
             on_release: app.root.change_screen('pin_screen')
             on_release: app.root.change_screen('pin_screen')
 
@@ -330,7 +330,7 @@
         padding:190,400,200,50
         spacing:30
         Button:
-            text:'Продолжить'
+            text: 'Отмена'
             background_color:'#74B0D8'
             background_normal:''
             size_hint:None,None
@@ -338,12 +338,14 @@
             on_press: app.root.change_screen('menu_screen')
 
         Button:
-            text: 'Отмена'
+            text:'Продолжить'
             background_color:'#74B0D8'
             background_normal:''
             size_hint:None,None
             size:(200,70)
             on_press: app.root.change_screen('menu_screen')
+
+
 
 
 <MoneyOutScreen>
@@ -357,6 +359,7 @@
             markup: True
 
         TextInput:
+            id: money_out_textinput
             halign: 'center'
             hint_text: 'money'
             on_text: root.set_money(self.text)
@@ -383,6 +386,7 @@
             markup: True
 
         TextInput:
+            id: money_input
             halign: 'center'
             hint_text: 'money'
             on_text: root.set_money(self.text)

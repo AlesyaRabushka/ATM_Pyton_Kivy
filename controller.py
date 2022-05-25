@@ -54,6 +54,7 @@ class Controller:
                 return True
         except:
             self.screen_manager.change_screen('death_screen')
+            return 5
 
 
     def check_phone_number(self):
@@ -86,11 +87,13 @@ class Controller:
         try:
             if self.money == -1:
                 return -1
+            elif self.money == '0':
+                return 6
             else:
                 give_money = GiveMoney()
                 print(self.card.get_balance_byn())
                 flag = give_money.money_out(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
-                self.last_operation = 'Выдача наличных'
+                self.last_operation = f'Выдача наличных:\n                  {self.money} BYN'
                 return flag
         except:
             self.screen_manager.change_screen('death_screen')
@@ -98,14 +101,20 @@ class Controller:
 
     def money_in(self):
         try:
-            if self.money == '':
+            if self.money <= -1:
+                'here <= -1'
                 return -1
+            elif self.money == '0':
+                print('6')
+                return 6
             else:
                 get_money = GetMoney()
+                print(self.money)
                 get_money.money_in(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
-                self.last_operation = 'Пополнение средств'
-                return flag
+                self.last_operation = f'Пополнение средств\n                  {self.money} BYN'
+                return True
         except:
+            print(self.money)
             self.screen_manager.change_screen('death_screen')
             return 5
 
