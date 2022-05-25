@@ -259,9 +259,8 @@ class PhoneInput(TextInput):
     def insert_text(self, string, from_undo = False):
         new_text = self.text + string
         print(self.text)
-        if new_text != '':
-
-
+        print(new_text)
+        if len(new_text) != 0:
             if len(new_text) <= 17:
                 if len(new_text) == 4:
                     string += ' '
