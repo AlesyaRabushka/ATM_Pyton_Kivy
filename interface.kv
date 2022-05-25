@@ -635,13 +635,21 @@
 <CheckScreen>
     BoxLayout:
         orientation:'vertical'
-
+    GridLayout:
+        cols:1
+        padding:300,250,400,200
+        spacing:140
         Label:
             id: check_label
             markup: True
+            font_size: 25
 
         Button:
-            text:'continue'
+            text:'Продолжить'
+            background_color:'#74B0D8'
+            background_normal:''
+            size_hint:None,None
+            size:(200,70)
             on_press: app.root.change_screen('continue_screen')
 
 
