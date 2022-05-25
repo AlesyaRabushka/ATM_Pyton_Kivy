@@ -71,6 +71,7 @@ class PinScreen(MDScreen):
         flag = self.controller.check_pin()
         if flag == True:
             #self.ids.pin_label.text = '[color=#3E769B]Верный пин-код[/color]'
+            self.ids.pin_label.text = '[color=#3E769B]Введите пин-код\n[/color]'
             self.clean_input()
             return 1
         elif flag == 5:
@@ -138,10 +139,10 @@ class MoneyOutScreen(MDScreen):
 
     def money_out(self):
         flag = self.controller.money_out()
+        self.ids.money_out_input.text = ''
         if flag == -1:
             self.correct = False
             self.ids.money_out_label.text = '[color=#FF0000]Неверный формат ввода[/color]'
-            self.ids.money_input.text = ''
             return False
         elif flag == 6:
             self.correct = False
@@ -159,9 +160,12 @@ class MoneyOutScreen(MDScreen):
         elif flag == 5:
             self.death = True
         elif flag == True:
+            self.ids.money_out_label.text = '[color=#3E769B]Введите сумму выдачи[/color]'
             self.death = False
             self.correct = True
             return True
+        else:
+            return False
 
 
 
@@ -178,22 +182,29 @@ class MoneyInScreen(MDScreen):
 
     def money_in(self):
         flag = self.controller.money_in()
+        self.ids.money_in_input.text = ''
         if flag == 5:
+            self.ids.money_in_label.text = '[color=#3E769B]Введите сумму выдачи[/color]'
             self.death = True
+            self.ids.money_in_input.text = ''
             return False
         elif flag == -1:
             self.correct = False
             self.ids.money_in_label.text = '[color=#FF0000]Неверный формат ввода данных[/color]'
+            self.ids.money_in_input.text = ''
             return False
         elif flag == 6:
             self.ids.money_in_label.text = '[color=#FF0000]Неверный формат ввода данных[/color]'
+            self.ids.money_in_input.text = ''
             return False
         elif flag == True:
+            self.ids.money_in_label.text ='[color=#3E769B]Введите сумму[/color]'
             self.death = False
             self.correct = True
             return True
         else:
             self.ids.money_in_label.text = '[color=#FF0000]Неверный формат ввода данных[/color]'
+            self.ids.money_in_input.text = ''
             return False
 
 
@@ -265,8 +276,8 @@ class BalanceScreen(MDScreen):
 
     def set_balance(self, byn, usd):
         print(byn, usd)
-        self.ids.balance_byn_label.text = '[color=#3E769B]' + byn + '[/color]'
-        self.ids.balance_usd_label.text = '[color=#3E769B]' + usd + '[/color]'
+        self.ids.balance_byn_label.text = '[color=#3E769B]' + str(byn) + '[/color]'
+        self.ids.balance_usd_label.text = '[color=#3E769B]' + str(usd) + '[/color]'
 
 
 

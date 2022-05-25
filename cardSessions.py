@@ -291,6 +291,9 @@ class GetMoney:
     def money_in(self, card, money: int, bankomat_storage, single_t, currency, gui):
         # ветка бунов
         if currency == 'BYN':
+            if gui == 1:
+                if money <= 0:
+                    return 5
             new_money = float(card.get_balance_byn()) + money
             find = int(card.get_chosen()) - 1
             single_t.log('Пополнение счета', True,'')
@@ -342,6 +345,8 @@ class GetMoney:
             if gui == 0:
                 c = CardCheck()
                 c.chek('Пополнение счета')
+            if gui == 1:
+                return True
 
         # ветка американ деньги
         elif currency == 'USD':

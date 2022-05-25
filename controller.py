@@ -94,6 +94,7 @@ class Controller:
                 print(self.card.get_balance_byn())
                 flag = give_money.money_out(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
                 self.last_operation = f'Выдача наличных:\n                  {self.money} BYN'
+                self.balance_screen.set_balance(self.card.get_balance_byn(), self.card.get_balance_usd())
                 return flag
         except:
             self.screen_manager.change_screen('death_screen')
@@ -101,7 +102,7 @@ class Controller:
 
     def money_in(self):
         try:
-            if self.money <= -1:
+            if self.money == -1:
                 'here <= -1'
                 return -1
             elif self.money == '0':
@@ -109,14 +110,20 @@ class Controller:
                 return 6
             else:
                 get_money = GetMoney()
-                print(self.money)
-                get_money.money_in(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
+
+                flag = get_money.money_in(self.card, int(self.money), self.storage, self.single_t, 'BYN', 1)
                 self.last_operation = f'Пополнение средств\n                  {self.money} BYN'
-                return True
+
+                self.balance_screen.set_balance(self.card.get_balance_byn(), self.card.get_balance_usd())
+
+                if flag == 5:
+                    self.screen_manager.change_screen('death_screen')
+                    return 5
+                return flag
         except:
-            print(self.money)
             self.screen_manager.change_screen('death_screen')
             return 5
+
 
 
 
@@ -128,6 +135,7 @@ class Controller:
         else:
             telephone.telephone_pay(self.card, int(money), number, self.storage, self.single_t)
             self.last_operation = 'Пополнение средств телефона'
+            self.balance_screen.set_balance(self.card.get_balance_byn(), self.card.get_balance_usd())
             return True
 
 
@@ -143,6 +151,7 @@ class Controller:
             transaction.fromBUNtoUSD(self.card,float(money), 1)
             self.last_operation = 'Перевод средств\n                  BYN->USD'
             print(self.card.get_balance_byn())
+            self.balance_screen.set_balance(self.card.get_balance_byn(), self.card.get_balance_usd())
         except:
             self.screen_manager.change_screen('death_screen')
             return 5
@@ -155,6 +164,7 @@ class Controller:
             transaction.fromUSDtoBUN(self.card,float(money), 1)
             self.last_operation = 'Перевод средств\n                  USD->BYN'
             print(self.card.get_balance_byn())
+            self.balance_screen.set_balance(self.card.get_balance_byn(), self.card.get_balance_usd())
         except:
             self.screen_manager.change_screen('death_screen')
             return 5

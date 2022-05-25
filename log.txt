@@ -2868,3 +2868,108 @@ Error type:  Неверный формат ввода
 Operation type: Выдача наличных
 Status: Success
 
+25-05-2022  15:37:14
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:50:31
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:50:33
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:52:34
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:52:55
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:53:48
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:56:26
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:57:02
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:57:33
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:57:44
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  15:59:37
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  16:00:57
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  16:01:05
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:01:18
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Неверный формат ввода
+
+25-05-2022  16:02:19
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:02:33
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:03:11
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:03:58
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:04:15
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  16:08:46
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  16:10:24
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  16:10:36
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:13:10
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  16:13:21
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  16:13:36
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  16:13:46
+Operation type: Выдача наличных
+Status: Success
+
