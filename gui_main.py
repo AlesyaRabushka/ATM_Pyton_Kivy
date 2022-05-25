@@ -1,6 +1,5 @@
-import os
-from kivy.lang import Builder
-import random
+from kivy.core.window import Window
+
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.screenmanager import NoTransition
@@ -20,6 +19,12 @@ class Manager(ScreenManager):
 class MyApp(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self._keyboard = Window.request_keyboard(self._keyboard_closed, self)
+        self._keyboard.bind(on_key_down = self._on_keyboard_down)
+        self._keyboard.bind(on_key_up = self._on_keyboard_up)
+        self.make_alive = []
+
+
         self.sm = Manager(transition=NoTransition())
         self.controller = Controller(screen_manager = self.sm)
 
@@ -47,8 +52,38 @@ class MyApp(MDApp):
         self.sm.add_widget(BYNtoUSD(name='byn_to_usd', controller=self.controller))
         self.sm.add_widget(USDtoBYN(name='usd_to_byn', controller=self.controller))
         self.sm.add_widget(ChangePinScreen(name='change_pin_screen', controller=self.controller))
+        self.sm.add_widget(RestartScreen(name='restart_screen'))
         self.sm.current = 'welcome_screen'
 
+    def _keyboard_closed(self):
+        if self.sm.current == 'death_screen':
+            self._keyboard.unbind(on_key_down = self._on_keyboard_down)
+            self._keyboard = None
+
+    def _on_keyboard_down(self, *args):
+        if self.sm.current == 'death_screen':
+            # if len(self.make_alive) < 3:
+            #     self.make_alive.append(args[2])
+            # print('yes', args[2])
+            # if len(self.make_alive) == 3:
+            #     string = str(self.make_alive)
+            #     if 'İ' in string and 'ı' in string and 'Ď' in string:
+            #         self.sm.current = 'restart_screen'
+            #     else:
+            #         self.make_alive = []
+            if args[2] == ' ':
+                #print('yes',args[2])
+                self.sm.current = 'restart_screen'
+        elif self.sm.current == 'restart_screen':
+            if args[2] == ' ':
+                #print('yes',args[2])
+                self.sm.current = 'pin_screen'
+
+        #print('down', args)
+
+    def _on_keyboard_up(self, *args):
+        pass
+        #print('up', args)
 
 
     def build(self):
