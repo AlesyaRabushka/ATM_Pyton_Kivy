@@ -364,7 +364,13 @@ class CheckChoiceScreen(MDScreen):
 
 
 class DeathScreen(MDScreen):
-    pass
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.ids.death_label.text = '[color=#FFFFFF]    \
+        The problem has been detected and windows has been shut down\n \
+        if this is the first time you\'ve seen this stop error screen,\n \
+        restart yor computer. If this screen appears again, follow these steps:\n\n \
+        Press Ctrl + Shift + alt to continue[/color]'
 
 class WarningScreen(MDScreen):
     pass
