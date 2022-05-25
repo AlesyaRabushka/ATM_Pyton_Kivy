@@ -522,7 +522,42 @@ class Telephone(GiveMoney):
     def telephone_pay(self, card, money: int, tel_number: str, bankomat_storage, single_t):
         self.value_check(card,money)
         self.copy_data()
-        card.set_balance_byn(int(card.get_balance_byn())-money)
+        new_money = float(card.get_balance_byn()) - money
+        card.set_balance_byn(new_money)
+        find = card.get_chosen() - 1
+        from_card = open('newcard.txt', 'r')
+        to_card = open('card.txt', 'w')
+        amount = from_card.readline()
+        to_card.write(amount)
+
+        for i in range(0, int(amount)):
+            if i == find:
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+
+                to_card.write(card.get_number())
+                to_card.write(card.get_data())
+                to_card.write(card.get_holder())
+                to_card.write(str(card.get_pin()) + '\n')
+                to_card.write(card.get_cvv())
+                to_card.write(str(card.get_balance_byn()) + '\n')
+                to_card.write(str(card.get_balance_usd()) + '\n')
+
+            else:
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+        from_card.close()
+        to_card.close()
         tel_number=tel_number+'\n'
         from_card = open('newtelephone.txt', 'r')
         to_card = open('telephone.txt', 'w')

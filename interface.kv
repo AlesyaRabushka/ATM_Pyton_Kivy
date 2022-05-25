@@ -454,7 +454,7 @@
         padding:270,140,400,600
         spacing:60
         Label:
-            id: check_label
+            id: tel_label
             markup: True
             text: '[color=#3E769B]Введите номер и сумму[/color]'
             font_size: 25
@@ -501,8 +501,7 @@
             background_normal:''
             size_hint:None,None
             size:(200,70)
-            on_press: root.phone_payment()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+            on_release: if root.phone_payment(): app.root.change_screen('check_choice_screen')
 
 
 <BYNtoUSD>

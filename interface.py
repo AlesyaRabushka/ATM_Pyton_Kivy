@@ -317,20 +317,21 @@ class PhoneInput(TextInput):
 class TelephonePaymentScreen(MDScreen):
     number = ObjectProperty()
     money = ObjectProperty()
-    check_label = ObjectProperty()
     def __init__(self, controller, **kwargs):
         super().__init__(**kwargs)
         self.controller = controller
         self.death = False
-
 
     def phone_payment(self):
         number = self.ids.number.text
         money = self.ids.money.text
         flag = self.controller.telephone_payment(number, money)
         if flag == 5:
-            self.ids.money_in_label.text = '[color=#3E769B]Введите сумму выдачи[/color]'
-            self.death = True
+            self.ids.tel_label.text = '[color=#FF0000]Неверная сумма[/color]'
+            return False
+        elif flag == 10:
+            self.ids.tel_label.text = '[color=#FF0000]Неверный номер[/color]'
+            return False
         if not flag:
             self.ids.tel_label.text = '[color=#FF0000]Недостаточно средств[/color]'
             return False
@@ -392,10 +393,11 @@ class BYNtoUSD(MDScreen):
         self.death = False
 
     def from_byn_to_usd(self):
-        money=self.money.text
+        money = self.money.text
         flag = self.controller.fromBUNtoUSD(money)
         if flag == 5:
             self.death = True
+
 
 class USDtoBYN(MDScreen):
     money = ObjectProperty()

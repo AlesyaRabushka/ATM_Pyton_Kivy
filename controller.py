@@ -71,7 +71,7 @@ class Controller:
 
         if len(self.phone_number) != 17:
             return False
-        elif full_number[0] == '3' and full_number[1] == '7' and full_number[2] == '5':
+        elif self.phone_number[0] == '+' and self.phone_number[1] == '3' and self.phone_number[2] == '7'and self.phone_number[3] == '5':
             return True
 
 
@@ -130,6 +130,11 @@ class Controller:
     def telephone_payment(self,number, money):
         #try:
         telephone = Telephone()
+        self.phone_number=number
+        if money=="":
+            return 5
+        if not self.check_phone_number():
+            return 10
         if not telephone.value_check(self.card,money):
             return False
         else:
