@@ -131,7 +131,7 @@ class Controller:
         #try:
         telephone = Telephone()
         self.phone_number=number
-        if money=="":
+        if money=="" or int(money) <= 0:
             return 5
         if not self.check_phone_number():
             return 10
@@ -153,7 +153,7 @@ class Controller:
 
         print(self.card.get_balance_byn())
         transaction = Currency_transactions()
-        if money=="":
+        if money=="" or int(money) <= 0:
             return 5
         if not transaction.value_check_for_BUNtoUSD(self.card,float(money)):
             return False
@@ -171,7 +171,7 @@ class Controller:
 
         print(self.card.get_balance_byn())
         transaction = Currency_transactions()
-        if money=="":
+        if money=="" or int(money) <= 0:
             return 5
         if not transaction.value_check_for_USDtoBUN(self.card,float(money)):
             return False

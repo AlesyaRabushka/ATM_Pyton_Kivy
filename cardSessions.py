@@ -568,10 +568,24 @@ class Telephone(GiveMoney):
         to_card.close()
         tel_number=tel_number+'\n'
         from_card = open('newtelephone.txt', 'r')
+        k = from_card.readline()
+        flag = True
+        for i in range(int(k)):
+            telephone = from_card.readline()
+            if tel_number == telephone:
+                flag = True
+            else:
+                flag = False
+        from_card.close()
+        from_card = open('newtelephone.txt', 'r')
         to_card = open('telephone.txt', 'w')
         k = from_card.readline()
+        a = int(k)
+        if not flag:
+            a+=1
         to_card.write(k)
         single_t.log('Пополнение счета телефона', True,'')
+
         for i in range(int(k)):
             telephone = from_card.readline()
             balance = int(from_card.readline())
@@ -599,13 +613,13 @@ class Telephone(GiveMoney):
 
 class Currency_transactions:
     def value_check_for_BUNtoUSD(self,card,money):
-        if float(money) * 3.31 > float(card.get_balance_byn()) or float(money) < 0:
+        if float(money) * 3.31 > float(card.get_balance_byn()) or float(money) <= 0:
             return False
         else:
             return True
 
     def value_check_for_USDtoBUN(self, card, money):
-        if money / 3.31 > card.get_balance_usd() or money < 0:
+        if money / 3.31 > card.get_balance_usd() or money <= 0:
             return False
         else:
             return True
