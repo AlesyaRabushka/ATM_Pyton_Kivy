@@ -358,6 +358,8 @@ class TelephonePaymentScreen(MDScreen):
             self.ids.tel_label.text = '[color=#FF0000]Недостаточно средств[/color]'
             return False
         else:
+            self.ids.number.text = '+375 '
+            self.ids.money.text = ''
             return True
 
 
@@ -415,10 +417,19 @@ class BYNtoUSD(MDScreen):
         self.death = False
 
     def from_byn_to_usd(self):
+
         money = self.money.text
         flag = self.controller.fromBUNtoUSD(money)
         if flag == 5:
             self.death = True
+            self.ids.money_out_label.text = '[color=#FF0000]Неверная сумма[/color]'
+            return False
+        if not flag:
+            self.ids.money_out_label.text = '[color=#FF0000]Недостаточно средств[/color]'
+            return False
+        else:
+            self.money.text=''
+            return True
 
 
 class USDtoBYN(MDScreen):
@@ -434,6 +445,14 @@ class USDtoBYN(MDScreen):
         flag = self.controller.fromUSDtoBUN(money)
         if flag == 5:
             self.death = True
+            self.ids.money_out_label.text = '[color=#FF0000]Неверная сумма[/color]'
+            return False
+        if not flag:
+            self.ids.money_out_label.text = '[color=#FF0000]Недостаточно средств[/color]'
+            return False
+        else:
+            self.money.text = ''
+            return True
 
 
 class RestartScreen(MDScreen):

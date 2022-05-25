@@ -150,29 +150,37 @@ class Controller:
 
 
     def fromBUNtoUSD(self,money):
-        try:
-            print(self.card.get_balance_byn())
-            transaction = Currency_transactions()
+
+        print(self.card.get_balance_byn())
+        transaction = Currency_transactions()
+        if money=="":
+            return 5
+        if not transaction.value_check_for_BUNtoUSD(self.card,float(money)):
+            return False
+        else:
             transaction.fromBUNtoUSD(self.card,float(money), 1)
             self.last_operation = 'Перевод средств\n                  BYN->USD'
             print(self.card.get_balance_byn())
             self.balance_screen.set_balance(self.card.get_balance_byn(), self.card.get_balance_usd())
-        except:
-            self.screen_manager.change_screen('death_screen')
-            return 5
+            return True
+        #self.screen_manager.change_screen('death_screen')
+        #return 5
 
 
     def fromUSDtoBUN(self,money):
-        try:
-            print(self.card.get_balance_byn())
-            transaction = Currency_transactions()
+
+        print(self.card.get_balance_byn())
+        transaction = Currency_transactions()
+        if money=="":
+            return 5
+        if not transaction.value_check_for_USDtoBUN(self.card,float(money)):
+            return False
+        else:
             transaction.fromUSDtoBUN(self.card,float(money), 1)
             self.last_operation = 'Перевод средств\n                  USD->BYN'
             print(self.card.get_balance_byn())
             self.balance_screen.set_balance(self.card.get_balance_byn(), self.card.get_balance_usd())
-        except:
-            self.screen_manager.change_screen('death_screen')
-            return 5
+            return True
 
 
     def change_pin(self, new_pin):

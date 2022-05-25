@@ -598,104 +598,113 @@ class Telephone(GiveMoney):
         new_card.close()
 
 class Currency_transactions:
+    def value_check_for_BUNtoUSD(self,card,money):
+        if float(money) * 3.31 > float(card.get_balance_byn()) or float(money) < 0:
+            return False
+        else:
+            return True
+
+    def value_check_for_USDtoBUN(self, card, money):
+        if money / 3.31 > card.get_balance_usd() or money < 0:
+            return False
+        else:
+            return True
     def fromBUNtoUSD(self,card,value:float, gui):
         card.copy_data()
-        if float(value) * 3.31 > float(card.get_balance_byn()) or float(value) < 0:
-            print('ERROR')
-        else:
-            new_value = float(card.get_balance_byn())-(value*3.31)
-            new_value = float('{:.2f}'.format(new_value))
-            cur_new_value=float(card.get_balance_usd())+value
-            card.set_balance_usd(cur_new_value)
-            card.set_balance_byn(new_value)
-            find = card.get_chosen() - 1
+        self.value_check_for_BUNtoUSD(card,value)
+        new_value = float(card.get_balance_byn())-(value*3.31)
+        new_value = float('{:.2f}'.format(new_value))
+        cur_new_value=float(card.get_balance_usd())+value
+        card.set_balance_usd(cur_new_value)
+        card.set_balance_byn(new_value)
+        find = card.get_chosen() - 1
 
-            from_card = open('newcard.txt', 'r')
-            to_card = open('card.txt', 'w')
-            amount = from_card.readline()
-            to_card.write(amount)
+        from_card = open('newcard.txt', 'r')
+        to_card = open('card.txt', 'w')
+        amount = from_card.readline()
+        to_card.write(amount)
 
-            for i in range(0, int(amount)):
-                if i == find:
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
+        for i in range(0, int(amount)):
+            if i == find:
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
 
-                    to_card.write(card.get_number())
-                    to_card.write(card.get_data())
-                    to_card.write(card.get_holder())
-                    to_card.write(str(card.get_pin()) + '\n')
-                    to_card.write(card.get_cvv())
-                    to_card.write(str(card.get_balance_byn()) + '\n')
-                    to_card.write(str(card.get_balance_usd()) + '\n')
+                to_card.write(card.get_number())
+                to_card.write(card.get_data())
+                to_card.write(card.get_holder())
+                to_card.write(str(card.get_pin()) + '\n')
+                to_card.write(card.get_cvv())
+                to_card.write(str(card.get_balance_byn()) + '\n')
+                to_card.write(str(card.get_balance_usd()) + '\n')
 
-                else:
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-            from_card.close()
-            to_card.close()
+            else:
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+        from_card.close()
+        to_card.close()
+        if gui == 0:
+            c = CardCheck()
+            c.chek('Валютные переводы')
+        return True
 
             # выдача чека
-            if gui == 0:
-                c = CardCheck()
-                c.chek('Валютные переводы')
+
 
     def fromUSDtoBUN(self, card, value: float, gui):
         card.copy_data()
-        if value / 3.31 > card.get_balance_usd() or value < 0:
-            print('ERROR')
-        else:
-            new_value = float(card.get_balance_usd()) - (value / 3.31)
-            cur_new_value = float(card.get_balance_byn()) + value
-            new_value = float('{:.2f}'.format(new_value))
-            card.set_balance_usd(new_value)
-            card.set_balance_byn(cur_new_value)
-            find = card.get_chosen() - 1
+        self.value_check_for_USDtoBUN(card, value)
+        new_value = float(card.get_balance_usd()) - (value / 3.31)
+        cur_new_value = float(card.get_balance_byn()) + value
+        new_value = float('{:.2f}'.format(new_value))
+        card.set_balance_usd(new_value)
+        card.set_balance_byn(cur_new_value)
+        find = card.get_chosen() - 1
 
-            from_card = open('newcard.txt', 'r')
-            to_card = open('card.txt', 'w')
-            amount = from_card.readline()
-            to_card.write(amount)
+        from_card = open('newcard.txt', 'r')
+        to_card = open('card.txt', 'w')
+        amount = from_card.readline()
+        to_card.write(amount)
 
-            for i in range(0, int(amount)):
-                if i == find:
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
-                    from_card.readline()
+        for i in range(0, int(amount)):
+            if i == find:
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
+                from_card.readline()
 
-                    to_card.write(card.get_number())
-                    to_card.write(card.get_data())
-                    to_card.write(card.get_holder())
-                    to_card.write(str(card.get_pin()) + '\n')
-                    to_card.write(card.get_cvv())
-                    to_card.write(str(card.get_balance_byn()) + '\n')
-                    to_card.write(str(card.get_balance_usd()) + '\n')
+                to_card.write(card.get_number())
+                to_card.write(card.get_data())
+                to_card.write(card.get_holder())
+                to_card.write(str(card.get_pin()) + '\n')
+                to_card.write(card.get_cvv())
+                to_card.write(str(card.get_balance_byn()) + '\n')
+                to_card.write(str(card.get_balance_usd()) + '\n')
 
-                else:
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-                    to_card.write(from_card.readline())
-            from_card.close()
-            to_card.close()
+            else:
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+                to_card.write(from_card.readline())
+        from_card.close()
+        to_card.close()
 
-            # выдача чека
-            if gui == 0:
-                c = CardCheck()
-                c.chek('Валютные переводы')
+        # выдача чека
+        if gui == 0:
+            c = CardCheck()
+            c.chek('Валютные переводы')

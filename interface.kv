@@ -545,8 +545,7 @@
             background_normal:''
             size_hint:None,None
             size:(200,70)
-            on_press: root.from_byn_to_usd()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+            on_release: if root.from_byn_to_usd(): app.root.change_screen('check_choice_screen')
 
 
 
@@ -591,8 +590,7 @@
             background_normal:''
             size_hint:None,None
             size:(200,70)
-            on_press: root.from_usd_to_byn()
-            on_release: if root.death == False: app.root.change_screen('check_choice_screen')
+            on_release: if root.from_usd_to_byn(): app.root.change_screen('check_choice_screen')
 
 
 
