@@ -113,14 +113,39 @@ class MoneyOutChoiceScreen(MDScreen):
 
 
     def set_money(self, money):
-        if self.controller.set_money(money) == False:
-            self.ids.money_out_label.text = '[color=#FF0000]Неверный ввод данных[/color]'
-        else:
-            #self.ids.money_out_label.text = '[color=#FF9900]okeyy[/color]'
-            self.controller.money_out()
+        self.controller.set_money(money)
+
 
     def money_out(self):
-        self.controller.money_out()
+        flag = self.controller.money_out()
+
+        if flag == -1:
+            self.correct = False
+            self.ids.money_out_label.text = '[color=#FF0000]Неверный формат ввода[/color]'
+            return False
+        elif flag == 6:
+            self.correct = False
+            self.ids.money_out_label.text = '[color=#FF0000]Неверный формат ввода[/color]'
+            return False
+        elif flag == 4:
+            self.ids.money_out_label.text = '[color=#FF0000]Лимит средств превышен[/color]'
+            return False
+        elif flag == 2:
+            self.ids.money_out_label.text = '[color=#FF0000]Недостаточно средств на счете[/color]'
+            return False
+        elif flag == 3:
+            self.ids.money_out_label.text = '[color=#FF0000]Неверный формат ввода[/color]'
+            return False
+        elif flag == 5:
+            return False
+        elif flag == True:
+            self.ids.money_out_label.text = '[color=#3E769B]Введите сумму выдачи[/color]'
+            self.death = False
+            self.correct = True
+            return True
+        else:
+            return False
+
 
 
 
@@ -275,7 +300,6 @@ class BalanceScreen(MDScreen):
 
 
     def set_balance(self, byn, usd):
-        print(byn, usd)
         self.ids.balance_byn_label.text = '[color=#FF8C00]' + str(byn) + '[/color]'
         self.ids.balance_usd_label.text = '[color=#FF8C00]' + str(usd) + '[/color]'
 
@@ -294,8 +318,6 @@ class PhoneInput(TextInput):
         numbers = '1234567890 '
         if string in numbers:
             new_text = self.text + string
-            print(self.text)
-            print(new_text)
             if len(new_text) != 0:
                 if len(new_text) <= 17:
                     if len(new_text) == 4:

@@ -216,7 +216,8 @@
             size_hint:None,None
             size:(200,70)
             on_press: root.set_money(5)
-            on_release: app.root.change_screen('check_choice_screen')
+            #on_release: app.root.change_screen('check_choice_screen')
+            on_release: if root.money_out() == True: app.root.change_screen('check_choice_screen')
 
         Button:
             text: '10'
@@ -225,7 +226,7 @@
             size_hint:None,None
             size:(200,70)
             on_press: root.set_money(10)
-            on_release: app.root.change_screen('check_choice_screen')
+            on_release: if root.money_out() == True: app.root.change_screen('check_choice_screen')
 #            on_release: root.money_out()
 
         Button:
@@ -235,7 +236,7 @@
             size_hint:None,None
             size:(200,70)
             on_press: root.set_money(20)
-            on_release: app.root.change_screen('check_choice_screen')
+            on_release: if root.money_out() == True: app.root.change_screen('check_choice_screen')
 #            on_release: root.money_out()
 
         Button:
@@ -245,7 +246,7 @@
             size_hint:None,None
             size:(200,70)
             on_press: root.set_money(50)
-            on_release: app.root.change_screen('check_choice_screen')
+            on_release: if root.money_out() == True: app.root.change_screen('check_choice_screen')
 #            on_release: root.money_out()
 
         Button:
@@ -255,7 +256,7 @@
             size_hint:None,None
             size:(200,70)
             on_press: root.set_money(100)
-            on_release: app.root.change_screen('check_choice_screen')
+            on_release: if root.money_out() == True: app.root.change_screen('check_choice_screen')
 #            on_release: root.money_out()
 
         Button:

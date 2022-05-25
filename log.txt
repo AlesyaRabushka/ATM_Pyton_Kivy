@@ -2981,3 +2981,55 @@ Status: Success
 Operation type: Пополнение счета
 Status: Success
 
+25-05-2022  18:44:28
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  18:45:16
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Лимит средств превышен
+
+25-05-2022  18:46:46
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  18:46:56
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  18:47:35
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  18:47:45
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+25-05-2022  18:51:29
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+25-05-2022  18:52:20
+Operation type: Выдача наличных
+Status: Fail
+Error type:  Недостаточно средств
+
+25-05-2022  18:52:59
+Operation type: Пополнение счета
+Status: Success
+
+25-05-2022  18:53:06
+Operation type: Выдача наличных
+Status: Success
+
+25-05-2022  18:53:22
+Operation type: Пополнение счета телефона
+Status: Success
+
+25-05-2022  18:55:15
+Operation type: Пополнение счета
+Status: Success
+

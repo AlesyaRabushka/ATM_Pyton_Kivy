@@ -69,6 +69,7 @@ class MyApp(MDApp):
                 string = str(self.make_alive)
                 if 'İ' in string and 'ı' in string and 'Ĵ' in string:
                     self.sm.current = 'restart_screen'
+                    self.make_alive = []
                 else:
                     self.make_alive = []
 
