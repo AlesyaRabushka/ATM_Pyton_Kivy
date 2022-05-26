@@ -51,7 +51,7 @@ class MyApp(MDApp):
         self.sm.add_widget(TelephonePaymentScreen(name='telephone_payment', controller=self.controller))
         self.sm.add_widget(BYNtoUSD(name='byn_to_usd', controller=self.controller))
         self.sm.add_widget(USDtoBYN(name='usd_to_byn', controller=self.controller))
-        self.sm.add_widget(ChangePinScreen(name='change_pin_screen', controller=self.controller))
+        self.sm.add_widget(ChangePinScreen(name='change_pin_screen', controller=self.controller, pin_screen = pin_screen))
         self.sm.add_widget(RestartScreen(name='restart_screen'))
         self.sm.current = 'welcome_screen'
 

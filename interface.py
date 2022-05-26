@@ -64,7 +64,7 @@ class PinScreen(MDScreen):
     def set_pin(self, pin):
         self.controller.set_pin(pin)
 
-    def change_pin(self):
+    def change_pin_method(self):
         self.controller.change_pin()
 
     def check_pin(self):
@@ -239,11 +239,12 @@ class MoneyOperations(MDScreen):
 
 
 class ChangePinScreen(MDScreen):
-    def __init__(self, controller, **kwargs):
+    def __init__(self, controller, pin_screen, **kwargs):
         super().__init__(**kwargs)
         self.controller = controller
         self.new_pin = ''
         self.death = False
+        self.pin_screen = pin_screen
 
     def set_pin(self, new_pin):
         self.new_pin = new_pin
@@ -252,6 +253,8 @@ class ChangePinScreen(MDScreen):
         flag =  self.controller.change_pin(self.new_pin)
         if flag == True:
             self.controller.set_last_operation('Смена пин-код')
+            self.controller.pin_is_changed = True
+            self.pin_screen.change_pin = False
             return flag
         elif flag == 5:
             self.death = True
@@ -318,6 +321,9 @@ class PhoneInput(TextInput):
         numbers = '1234567890 '
         if string in numbers:
             new_text = self.text + string
+            if len(new_text) == 1:
+                buf = string
+                string = '+' + buf
             if len(new_text) != 0:
                 if len(new_text) <= 17:
                     if len(new_text) == 4:
@@ -334,6 +340,9 @@ class PhoneInput(TextInput):
                         TextInput.insert_text(self, string, from_undo=from_undo)
                     else:
                         TextInput.insert_text(self, string, from_undo=from_undo)
+            elif len(new_text) == 1:
+                string += '+'
+                TextInput.insert_text(self, string, from_undo=from_undo)
 
 
 class TelephonePaymentScreen(MDScreen):

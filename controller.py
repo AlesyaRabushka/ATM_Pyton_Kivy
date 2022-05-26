@@ -26,6 +26,8 @@ class Controller:
         self.storage.set_storage_byn(10000)
         self.storage.set_storage_usd(1000)
 
+        self.pin_is_changed = False
+
         self.pin = 0
         self.card = 0
         self.money = -1
@@ -185,7 +187,7 @@ class Controller:
 
     def change_pin(self, new_pin):
         try:
-            flag = ChangePin.change_card_pin(self.card, self.card.get_pin(), self.single_t, 1, new_pin)
+            flag = ChangePin.change_card_pin(self.card, int(self.card.get_pin()), self.single_t, 1, int(new_pin))
             print(flag)
             return flag
         except:
