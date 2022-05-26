@@ -321,6 +321,9 @@ class PhoneInput(TextInput):
         numbers = '1234567890 '
         if string in numbers:
             new_text = self.text + string
+            if len(new_text) == 1:
+                buf = string
+                string = '+' + buf
             if len(new_text) != 0:
                 if len(new_text) <= 17:
                     if len(new_text) == 4:
@@ -337,6 +340,9 @@ class PhoneInput(TextInput):
                         TextInput.insert_text(self, string, from_undo=from_undo)
                     else:
                         TextInput.insert_text(self, string, from_undo=from_undo)
+            elif len(new_text) == 1:
+                string += '+'
+                TextInput.insert_text(self, string, from_undo=from_undo)
 
 
 class TelephonePaymentScreen(MDScreen):
